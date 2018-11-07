@@ -30,5 +30,6 @@
         include($folder_pages . '/home.php');
     }
 ?>
+Domi ist ein Spast
 </body>
 </html>
