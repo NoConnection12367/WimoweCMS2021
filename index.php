@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -30,6 +30,5 @@
         include($folder_pages . '/home.php');
     }
 ?>
-Domi ist ein Spast
 </body>
 </html>
