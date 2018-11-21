@@ -63,6 +63,10 @@ body {
     margin-right: 20px;
 }
 
+h1 {
+    font-family: sans-serif;
+}
+
 /* Nav Bar */
 ul {
     list-style-type: none;

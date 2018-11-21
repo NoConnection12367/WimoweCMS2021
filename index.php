@@ -43,7 +43,7 @@
                 <h1>Wimowe CMS 2021</h1>
             </div>
 
-            <div id="navigation" class="container">
+            <div id="navigation">
                 <ul>
                     <?php
                         // Build Navigation from database
@@ -71,31 +71,30 @@
                     $folder_pages = "pages";
 
                     // Check if page request is set
-                    if (isset($_GET["page"]))
+                    if (!isset($_GET["page"]))
+                    {
+                        // No specific page requested, show home-page
+                        $page = "home";
+                    }
+                    else
                     {
                         $page = $_GET["page"];
+                    }
 
-                        // If requested page is existing, include it into content section of the current page
-                        $sql = "SELECT * FROM wimowe.content_de WHERE Site='" . $page . "'";
-                        $result = mysqli_query($conn, $sql);
+                    // If requested page is existing, include it into content section of the current page
+                    $sql = "SELECT * FROM wimowe.content_de WHERE Site='" . $page . "'";
+                    $result = mysqli_query($conn, $sql);
 
-                        if (mysqli_num_rows($result) > 0) {
+                    if (mysqli_num_rows($result) > 0) {
 
-                            // Content for requested site found, just take the first content and insert it into the page
-                            if($row = mysqli_fetch_assoc($result)) {
-                                echo $row["Content"];
-                            }
+                        // Content for requested site found, just take the first content and insert it into the page
+                        if($row = mysqli_fetch_assoc($result)) {
+                            echo $row["Content"];
                         }
-                        else {
-                            // No content found, display default error page
-                            include($folder_pages . '/default.php');
-                        }
-
                     }
                     else {
-                        // No page specifically requested -> show home-page
-                        $page = "home";
-                        include($folder_pages . '/home.php');
+                        // No content found, display default error page
+                        include($folder_pages . '/default.php');
                     }
                 ?>
             </div>
