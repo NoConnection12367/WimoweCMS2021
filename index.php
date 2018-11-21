@@ -7,13 +7,13 @@
         <title>Wimowe CMS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous"> -->
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-        <script src="js/script.js"></script>
+        
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
     </head>
 
     <?php
@@ -46,6 +46,7 @@
             <div id="navigation" class="container">
                 <ul>
                     <?php
+                        // Build Navigation from database
                         // Add a list item for each site, that should be displayed in the navigation bar
                         $sql = "SELECT * FROM wimowe.site WHERE Visible='1' ORDER BY NavIndex";
                         $result = mysqli_query($conn, $sql);
@@ -54,7 +55,7 @@
                             $sites = array();
                             while ($row = mysqli_fetch_assoc($result)) {
                                 array_push($sites, [$row["NavIndex"], $row["Name"]]);
-                                echo "<li><a href='?page=" . $row["Name"] . "'>" . $row["Name"] . "</a></li>\n";
+                                echo "<li navIndex='" . $row["NavIndex"] . "'><a href='?page=" . $row["Name"] . "'>" . $row["Name"] . "</a></li>\n";
                             }
                         }
                     ?>
