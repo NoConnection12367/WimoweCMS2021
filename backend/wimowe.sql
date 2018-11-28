@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Nov 2018 um 18:13
--- Server-Version: 10.1.36-MariaDB
--- PHP-Version: 7.2.11
+-- Erstellungszeit: 28. Nov 2018 um 12:58
+-- Server-Version: 10.1.35-MariaDB
+-- PHP-Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `content_de` (
   `ID` int(11) NOT NULL,
   `Content` longtext COLLATE latin1_german1_ci NOT NULL,
-  `Site` varchar(30) COLLATE latin1_german1_ci NOT NULL,
+  `SiteID` int(9) NOT NULL,
   `Tag` varchar(30) COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
@@ -39,9 +39,9 @@ CREATE TABLE `content_de` (
 -- Daten für Tabelle `content_de`
 --
 
-INSERT INTO `content_de` (`ID`, `Content`, `Site`, `Tag`) VALUES
-(1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.', 'Home', ''),
-(2, 'Das ist das Impressum.\r\n\r\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.\r\n\r\n-- Ende --', 'Impressum', '');
+INSERT INTO `content_de` (`ID`, `Content`, `SiteID`, `Tag`) VALUES
+(1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.', 1, 'text'),
+(2, 'Das ist das Impressum.\r\n\r\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.\r\n\r\n-- Ende --', 2, 'text');
 
 -- --------------------------------------------------------
 
@@ -74,9 +74,11 @@ CREATE TABLE `media` (
 --
 
 CREATE TABLE `site` (
+  `ID` int(11) NOT NULL,
   `Name` varchar(65) COLLATE latin1_german1_ci NOT NULL,
   `Visible` tinyint(1) NOT NULL,
   `NavIndex` varchar(65) COLLATE latin1_german1_ci DEFAULT NULL,
+  `TemplateID` int(9) UNSIGNED NOT NULL,
   `Creator` varchar(65) COLLATE latin1_german1_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
@@ -84,12 +86,31 @@ CREATE TABLE `site` (
 -- Daten für Tabelle `site`
 --
 
-INSERT INTO `site` (`Name`, `Visible`, `NavIndex`, `Creator`) VALUES
-('Home', 1, '1', 'Moritz'),
-('Impressum', 1, '3', 'Moritz'),
-('Seite 1', 1, '2', 'Moritz'),
-('Seite 1.1', 1, '2.1', 'Moritz'),
-('Seite 1.2', 1, '2.2', 'Moritz');
+INSERT INTO `site` (`ID`, `Name`, `Visible`, `NavIndex`, `TemplateID`, `Creator`) VALUES
+(1, 'Home', 1, '1', 2, 'Moritz'),
+(2, 'Impressum', 1, '3', 0, 'Moritz'),
+(3, 'Seite 1', 1, '2', 0, 'Moritz'),
+(4, 'Seite 1.1', 1, '2.1', 0, 'Moritz'),
+(5, 'Seite 1.2', 1, '2.2', 0, 'Moritz');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `template`
+--
+
+CREATE TABLE `template` (
+  `ID` int(11) NOT NULL,
+  `Path` varchar(256) COLLATE latin1_german1_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
+
+--
+-- Daten für Tabelle `template`
+--
+
+INSERT INTO `template` (`ID`, `Path`) VALUES
+(1, 'pages/plainTextTemplate.php'),
+(2, 'pages/sidebarPictureTemplate.php');
 
 -- --------------------------------------------------------
 
@@ -129,8 +150,15 @@ ALTER TABLE `media`
 -- Indizes für die Tabelle `site`
 --
 ALTER TABLE `site`
-  ADD PRIMARY KEY (`Name`),
+  ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `NavIndex` (`NavIndex`);
+
+--
+-- Indizes für die Tabelle `template`
+--
+ALTER TABLE `template`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Path` (`Path`);
 
 --
 -- Indizes für die Tabelle `user`
@@ -159,6 +187,12 @@ ALTER TABLE `content_en`
 --
 ALTER TABLE `media`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `template`
+--
+ALTER TABLE `template`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

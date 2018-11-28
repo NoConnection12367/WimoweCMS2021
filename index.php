@@ -31,6 +31,11 @@
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
+        else
+        {
+            mysqli_set_charset($conn,"utf8");
+            mysqli_select_db ($conn, "wimowe");
+        }
     ?>
 
 
@@ -48,7 +53,7 @@
                     <?php
                         // Build Navigation from database
                         // Add a list item for each site, that should be displayed in the navigation bar
-                        $sql = "SELECT * FROM wimowe.site WHERE Visible='1' ORDER BY NavIndex";
+                        $sql = "SELECT * FROM site WHERE Visible='1' ORDER BY NavIndex";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
@@ -65,7 +70,7 @@
             <div id="content" class="container">
 
                 <?php
-                    // Get Content from database
+                    // Get Template from database
                     //////////////////////////////
 
                     $folder_pages = "pages";
@@ -81,15 +86,17 @@
                         $page = $_GET["page"];
                     }
 
-                    // If requested page is existing, include it into content section of the current page
-                    $sql = "SELECT * FROM wimowe.content_de WHERE Site='" . $page . "'";
+                    // Check if requested site is existing
+                    $sql = "SELECT * FROM site LEFT JOIN Template ON site.TemplateID = Template.ID WHERE Name='" . $page . "'";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
+                        // Site found
 
-                        // Content for requested site found, just take the first content and insert it into the page
                         if($row = mysqli_fetch_assoc($result)) {
-                            echo $row["Content"];
+
+                            // Include template
+                            include($row["Path"]);
                         }
                     }
                     else {
