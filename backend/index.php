@@ -14,8 +14,8 @@
     </head>
     <body>
         <div id="header">
-            <h1>CMS Konfigurator 2.1</h1>
-            <i class="fas fa-user"></i>
+            <p>CMS Konfigurator 2.1</p>
+            <i id="user-icon" class="fas fa-user"></i>
 
         </div>
         <div class="wrapper">
