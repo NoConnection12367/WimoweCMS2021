@@ -1,7 +1,7 @@
 
 <div class="content">
 
-    <div id="sidebar">
+    <div id="sidebarRight">
         <?php
 
             // Get content of requested site
@@ -18,7 +18,7 @@
         ?>
     </div>
     
-    <div id="contentRightToSidebar">
+    <div id="contentLeftToSidebar">
         <div id="picture">
             <?php
 

@@ -42,7 +42,7 @@
     <!-- Body -->
     <body>
 
-        <div id="backgroundContainer" class="container">
+        <div id="backgroundContainer">
 
             <div id="header" class="container">
                 <h1>Wimowe CMS 2021</h1>
@@ -67,7 +67,7 @@
                 </ul>
             </div>
 
-            <div id="content" class="container">
+            <div class="container content">
 
                 <?php
                     // Get Template from database

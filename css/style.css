@@ -1,33 +1,6 @@
 
 
-/* Body width media queries */
-@media (min-width: 576px) { 
 
-    body {
-        max-width: 546px;
-    }
-}
-
-@media (min-width: 768px) { 
-
-    body {
-        max-width: 738px;
-    }
-}
-
-@media (min-width: 992px) { 
-
-    body {
-        max-width: 962px;
-    }
-}
-
-@media (min-width: 1200px) { 
-
-    body {
-        max-width: 1170px;
-    }
-}
 
 
 
@@ -35,7 +8,8 @@ body {
     margin: auto;
 
     background-image: url("../resources/backgrounds/dark_wall_@2X.png");
-    padding-top: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #backgroundContainer {
@@ -43,11 +17,15 @@ body {
     border-radius: 3px;
     padding-top: 1em;
     padding-bottom: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-#content {
-    padding-top: 2em;
+.content {
+    padding-top: 20px;
     padding-bottom: 2em;
+    float: left;
+    width: calc(100% - 5px);
 }
 
 
@@ -59,8 +37,8 @@ body {
 }
 
 .container {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 h1 {
@@ -117,4 +95,87 @@ li a:hover, .dropdown:hover .dropbtn {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Custom Pages */
+#sidebar {
+    float: left;
+    width: 20%;
+}
+
+#sidebarRight {
+    float: right;
+    width: 20%;
+}
+
+#contentRightToSidebar {
+    padding-left: 10px;
+    width: calc(80% - 10px);
+    float: right;
+}
+
+#contentLeftToSidebar {
+    padding-right: 0px;
+    width: calc(80% - 10px);
+    float: left;
+}
+
+#picture img {
+    width: 100%;
+}
+
+#picture {
+    margin-bottom: 25px;
+}
+
+/* Body width media queries */
+@media (min-width: 576px) { 
+
+    body {
+        max-width: 546px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #backgroundContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: calc(100% - 20px);
+    }
+
+    .container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #contentNextToSidebar {
+        padding-left: 25px;
+        width: calc(80% - 25px);
+    }
+}
+
+@media (min-width: 768px) { 
+
+    body {
+        max-width: 738px;
+    }
+}
+
+@media (min-width: 992px) { 
+
+    body {
+        max-width: 962px;
+    }
+}
+
+@media (min-width: 1200px) { 
+
+    body {
+        max-width: 1170px;
+    }
 }
