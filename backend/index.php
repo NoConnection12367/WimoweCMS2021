@@ -13,9 +13,12 @@
         <script src="js/script.js"></script>
     </head>
     <body>
-        <div id="header">
-            <p>CMS Konfigurator</p>
-            <i class="fas fa-user user-icon"></i>
+        <div class="wrapper">   
+            <div id="header">
+                <p>CMS Konfigurator</p>
+                <i class="fas fa-user user-icon"></i>
+            </div>
+
         </div>
         <div id="navigation">
             <ul>
@@ -28,25 +31,28 @@
             <i class="fas fa-angle-double-right toggle-nav" id="toggle-right"></i>
             <i class="fas fa-angle-double-left toggle-nav" id="toggle-left"></i>
         </div>
-        <div id=content>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+        <div class="wrapper">
+            <div id=content>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illo aut exercitationem similique consectetur maiores. Distinctio laudantium labore eius debitis quos eligendi repudiandae repellat ut fugit, libero tenetur, saepe explicabo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi ducimus in vel iusto! Adipisci rerum sapiente natus sed tempore quam in iste, dolore beatae fugiat blanditiis ipsum, animi dolorum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste dolore similique temporibus minima reiciendis culpa vitae est dicta esse perspiciatis. Deserunt consectetur enim ad minima, quaerat illo et doloremque dolores.</p>
+            </div>
+            
         </div>
     </body>
 </html>

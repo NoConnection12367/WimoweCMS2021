@@ -6,13 +6,13 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, ol {
 }
 
 body {
-	width: 99%;
     font-family: 'Open Sans';
     margin: 0 auto;
 }
 
 .wrapper{
     width: 100%;
+    margin: 0 auto;
 }
 
 #header {
@@ -130,14 +130,14 @@ body {
 /* Body width media queries */
 @media (min-width: 576px) { 
 
-    body {
+    .wrapper {
         max-width: 546px;
     }
 }
 
 @media (min-width: 768px) { 
 
-    body {
+    .wrapper {
         max-width: 738px;
     }
 
@@ -153,14 +153,14 @@ body {
 
 @media (min-width: 992px) { 
 
-    body {
+    .wrapper {
         max-width: 962px;
     }
 }
 
 @media (min-width: 1200px) { 
 
-    body {
+    .wrapper {
         max-width: 1170px;
     }
 }
