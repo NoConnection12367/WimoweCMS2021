@@ -1,16 +1,19 @@
+<?php 	
+	//error_reporting(0);
+	require_once ("config.php");
+	//require_once ("functions.php"); 
+?>
 <!DOCTYPE html>
-<html>
-    <!-- Head of main page -->
+<html lang="de">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--meta http-equiv="X-UA-Compatible" content="IE=edge"-->
         <title>Wimowe CMS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
 
         <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/script.js"></script>
     </head>
     <body>
         <div class="wrapper">   
@@ -35,8 +38,7 @@
             <div id=content>
 
             <?php
-                include('preview.php');
-            /*
+            
 				if (isset($_GET["page"])) 
 				{
 					$page = $_GET["page"];
@@ -48,14 +50,15 @@
 				}
 				else
 				{
-					$page = "home";
+					$page = "preview";
 					include($folder_pages . '/' . $page . '.php');
                 }
-                */
+                
 			?>
                 
             </div>
             
         </div>
+        <script src="js/script.js"></script>
     </body>
 </html>
