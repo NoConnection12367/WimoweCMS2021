@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 05. Dez 2018 um 13:38
--- Server-Version: 10.1.35-MariaDB
--- PHP-Version: 7.2.9
+-- Erstellungszeit: 08. Dez 2018 um 12:57
+-- Server-Version: 10.1.37-MariaDB
+-- PHP-Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,6 +69,15 @@ CREATE TABLE `media` (
   `ID` int(11) NOT NULL,
   `Path` varchar(30) COLLATE latin1_german1_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
+
+--
+-- Daten für Tabelle `media`
+--
+
+INSERT INTO `media` (`ID`, `Path`) VALUES
+(1, 'media/eichhorn1.jpg'),
+(2, 'media/eichhorn2.jpg'),
+(3, 'media/eichhorn3.jpg');
 
 -- --------------------------------------------------------
 
@@ -191,7 +200,7 @@ ALTER TABLE `content_en`
 -- AUTO_INCREMENT für Tabelle `media`
 --
 ALTER TABLE `media`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT für Tabelle `template`
