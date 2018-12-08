@@ -132,6 +132,7 @@ body {
 #content{
     margin-top: 70px;
     width: 100%;
+    height: calc( 100vh - 70px );
 }
 
 #preview{
@@ -140,9 +141,19 @@ body {
 
 iframe{
     width: 100%;
-    height: 800px;
+    height: calc( 100vh - 80px );
 }
 
+#media-container{
+    width: 100%;
+    border: 1px solid;
+}
+
+#media-toolbar{
+    height: 50px;
+    width: 100%;
+    background-color: #aaa;
+}
 
 /* Body width media queries */
 @media (min-width: 576px) { 
