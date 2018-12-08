@@ -144,15 +144,52 @@ iframe{
     height: calc( 100vh - 80px );
 }
 
-#media-container{
-    width: 100%;
-    border: 1px solid;
-}
-
 #media-toolbar{
     height: 50px;
     width: 100%;
-    background-color: #aaa;
+    background-color: #666;
+}
+
+#media-container{
+    width: 100%;
+}
+
+.media{
+    min-height: 300px;
+    padding: 15px;
+}
+
+.odd{
+    background-color: #EEE;
+}
+
+.even{
+    background-color: #CCC;
+
+}
+
+.media-imgContainer{
+    height: 150px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.media-imgContainer img{
+    max-height: 150px;
+    max-width: 200px;
+}
+
+.media-infos{
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.media-delBtn{
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
 }
 
 /* Body width media queries */
@@ -160,6 +197,23 @@ iframe{
 
     .wrapper {
         max-width: 546px;
+    }
+    
+
+    .media{
+        min-height: 150px;
+    }
+
+    .media-imgContainer{
+        float: left;
+    }
+    
+    .media-infos{
+        float: left;
+    }
+    
+    .media-delBtn{
+        float: left;
     }
 }
 

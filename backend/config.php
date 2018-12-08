@@ -1,13 +1,23 @@
 <?php 
 	$folder_pages = "pages";
 
-	// SQL-Server - phpmyadmin
-	 	
-	$db_host			= "";
-	$db_user			= "";
-	$db_passwd			= "";
-	$db_name			= "";
+	// Connect to sql database
 
-	// Verbindung zur DB herstellen
-	@$connection = new mysqli($db_host, $db_user, $db_passwd, $db_name);
+	// Define constants
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+
+	// Create connection
+	$conn = mysqli_connect($servername, $username, $password);
+
+	// Check connection
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	else
+	{
+		mysqli_set_charset($conn,"utf8");
+		mysqli_select_db ($conn, "wimowe");
+	}
 ?>
