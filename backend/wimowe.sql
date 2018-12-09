@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 08. Dez 2018 um 12:57
+-- Erstellungszeit: 09. Dez 2018 um 16:02
 -- Server-Version: 10.1.37-MariaDB
 -- PHP-Version: 7.2.12
 
@@ -67,17 +67,23 @@ CREATE TABLE `content_en` (
 
 CREATE TABLE `media` (
   `ID` int(11) NOT NULL,
-  `Path` varchar(30) COLLATE latin1_german1_ci DEFAULT NULL
+  `Path` varchar(50) COLLATE latin1_german1_ci DEFAULT NULL,
+  `Titel` varchar(30) COLLATE latin1_german1_ci NOT NULL,
+  `Autor` varchar(30) COLLATE latin1_german1_ci NOT NULL,
+  `Datum` date NOT NULL,
+  `Format` varchar(30) COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 --
 -- Daten für Tabelle `media`
 --
 
-INSERT INTO `media` (`ID`, `Path`) VALUES
-(1, 'media/eichhorn1.jpg'),
-(2, 'media/eichhorn2.jpg'),
-(3, 'media/eichhorn3.jpg');
+INSERT INTO `media` (`ID`, `Path`, `Titel`, `Autor`, `Datum`, `Format`) VALUES
+(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image'),
+(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image'),
+(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image'),
+(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video'),
+(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'pdf');
 
 -- --------------------------------------------------------
 
@@ -200,7 +206,7 @@ ALTER TABLE `content_en`
 -- AUTO_INCREMENT für Tabelle `media`
 --
 ALTER TABLE `media`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT für Tabelle `template`
