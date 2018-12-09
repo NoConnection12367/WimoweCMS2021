@@ -20,7 +20,27 @@
 ?>
         <div class="media <?php echo $cssType; ?>" id="media-<?php echo $row['ID']; ?>">
             <div class="media-imgContainer">
-                <img src="<?php echo $row['Path']; ?>" />
+            
+<?php
+
+            switch ($row['Format']) {
+                case 'image':
+                    echo '<img src="'. $row['Path'] . '"/>';
+                    break;
+                case 'video':
+                    echo '
+                    <video controls poster="'. $row['Path'] . '">
+                        <source src="'. $row['Path'] . '" type="video/mp4">
+                    </video>';
+                    break;
+                case 'pdf':
+                    echo '<i class="far fa-file-pdf"></i>';
+                    break;
+                default:
+                    echo '<i class="fas fa-exclamation-triangle"></i>';
+                    break;
+            }
+?>
             </div>
             <div class="media-infos">
                 <div class="media-titel">Titel: <?php echo $row['Titel']; ?></div>
