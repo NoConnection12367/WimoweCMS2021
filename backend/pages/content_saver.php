@@ -21,7 +21,8 @@ $content = $_REQUEST["content"];
 $siteid = $_REQUEST["siteid"];
 $tag = $_REQUEST["tag"];
 
-$sql = "INSERT INTO content_de (Content, SiteID, Tag) VALUES ('" . $content . "', '" . $siteid . "', '" . $tag . "')";
+
+$sql = "INSERT INTO content_de (Content, SiteID, Tag) VALUES ('" . $content . "', '" . $siteid . "', '" . $tag . "')  ON DUPLICATE KEY UPDATE Content=\" . $content . \", Tag=\". $tag .\"";
 if (mysqli_query($conn, $sql)) {
     echo "Content wurde gespeichert.";
 } else {
