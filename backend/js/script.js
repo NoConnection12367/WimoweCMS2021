@@ -31,15 +31,21 @@ $(document).ready(function(){
 
 function delFromMediathek(val){
     $.ajax({
-        url: "functions.php",
-        method: "POST",
-        data: {DelID: val},
+        url: 'functions.php',
+        type: 'POST',
+        dataType: 'html',
+        data: {
+            'DelID': val
+        },
 
-        success: function(){deleteSucc();}
+        success: function()
+        { 
+            console.log('deleted successfull');
+        },
+
+        error: function()
+        {
+            console.log('error');
+        }
     });
-}
-  
-function deleteSucc(){
-    // do something
-    console.log('deleted successfull');
 }

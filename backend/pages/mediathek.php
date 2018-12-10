@@ -4,7 +4,12 @@
 	//require_once ("functions.php"); 
 ?>
 <h1>Mediathek</h1>
-<div id="media-toolbar"></div>
+<div id="media-toolbar">
+    <form id="form-media-upload" action="upload.php" method="post" enctype="multipart/form-data">
+        <input id="media-searchBtn" type="file" name="fileToUpload">
+        <input id="media-uploadBtn" type="submit" value="+ Upload" name="submit">
+    </form>
+</div>
 <div id="media-container">
 
 <?php
