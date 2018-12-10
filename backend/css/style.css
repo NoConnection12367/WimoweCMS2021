@@ -146,8 +146,46 @@ iframe{
 
 #media-toolbar{
     height: 50px;
-    width: 100%;
+    width: calc( 100% - 10px);
     background-color: #666;
+    padding: 5px;
+}
+
+#form-media-upload{
+    line-height: 50px;
+    float: left;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    padding: 5px;
+}
+
+input{
+    border: none;
+    padding: none;
+    margin: none;
+}
+
+#media-searchBtn{
+    cursor: pointer;
+    border-radius: 5px;
+    float: left;
+}
+
+#media-uploadBtn{
+    line-height: 30px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.6);
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.6);
+}
+
+#media-uploadBtn:hover{
+    -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.6);
+    box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.6);
 }
 
 #media-container{
