@@ -47,30 +47,9 @@
                 <div class="media-autor">Autor: <?php echo $row['Autor']; ?></div>
                 <div class="media-datum">Datum: <?php echo $row['Datum']; ?></div>
             </div>
-            <div class="media-delBtn"><i class="fas fa-trash-alt"></i></div>
+            <div class="media-delBtn" value="<?php echo $row['ID']; ?>"><i class="fas fa-trash-alt"></i></div>
         </div>     
 <?php  
     }
 ?>
 </div>
-
-
-
-<!--
-
-<?php
-/*    $sql = "SELECT * FROM media WHERE your_conditions_here";
-    $result = mysql_query($sql);
-    
-    while ($row = mysql_fetch_assoc($result)) {
-?>
-        <img src="<?php echo $row['your_image']; ?>" />
-<?php  
-    }*/
-?>
-
-    <div class="media" id="media-1"></div>
-    <div class="media" id="media-2"></div>
-    <div class="media" id="media-3"></div>
-</div>
--->

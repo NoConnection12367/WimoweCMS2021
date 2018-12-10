@@ -203,6 +203,13 @@ iframe{
     width: 30px;
     height: 30px;
     font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.media-delBtn:hover{
+    font-size: 24px;
+    color: red;
 }
 
 /* Body width media queries */
@@ -242,6 +249,10 @@ iframe{
     #navigation{
         opacity: 1;
     }
+    
+    .media-infos{
+        margin-left: 30px;
+    }
 }
 
 @media (min-width: 992px) { 
@@ -255,5 +266,9 @@ iframe{
 
     .wrapper {
         max-width: 1170px;
+    }
+    
+    .media-infos{
+        margin-left: 50px;
     }
 }

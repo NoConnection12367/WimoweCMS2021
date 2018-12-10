@@ -1,7 +1,7 @@
 <?php 	
 	//error_reporting(0);
 	require_once ("config.php");
-	//require_once ("functions.php"); 
+	require_once ("functions.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="de">

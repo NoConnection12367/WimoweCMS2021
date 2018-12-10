@@ -22,5 +22,24 @@ $(document).ready(function(){
         $('#navigation').css('border','none');
         $('#navigation li').css('display', 'none');
     });
-    
+
+    $(".media-delBtn").click(function(){
+        delFromMediathek($(this).attr('value'));
+    });
 });
+
+
+function delFromMediathek(val){
+    $.ajax({
+        url: "functions.php",
+        method: "POST",
+        data: {DelID: val},
+
+        success: function(){deleteSucc();}
+    });
+}
+  
+function deleteSucc(){
+    // do something
+    console.log('deleted successfull');
+}
