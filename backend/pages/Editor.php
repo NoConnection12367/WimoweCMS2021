@@ -33,46 +33,23 @@
     }
     ?>
     <body>
-
-        <!-- Seitenauswahl -->
-        <div>
-        <select id="select_option">
-            <?php
-            $sql = "SELECT * FROM site";
-            $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
-                $sites = array();
-                while ($row = mysqli_fetch_assoc($result)) {
-                    array_push($sites, [$row["ID"], $row["Name"]]);
-                    echo "<option value=\"" . $row["ID"] . "\">" . $row["Name"] . "</option>\n";
-                }
-            }
-            ?>
-        </select>
-        </div>
-
         <!-- Contentauswahl -->
-        <div>
-        <select id="get_content">
-        <option value ="new_content">Neuer Eintrag</option>
+        <div id="editor_content" class="editable">
             <?php
-            $sql = "SELECT * FROM content_de";
+            $contetid = $_GET["loadcontenid"];
+            $sql = "SELECT * FROM content_de WHERE SiteID='$contetid'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 $sites = array();
                 while ($row = mysqli_fetch_assoc($result)) {
                     array_push($sites, [$row["ID"], $row["Content"]]);
-                    echo "<option value=\"" . $row["ID"] . "\">" . $row["Content"] . "</option>\n";
+                    echo $row["Content"];
                 }
             }
             ?>
-        </select>
         </div>
-
-        <br>
-        <div id="editor_content" class="editable"></div>
+        
         <br>
         <button id="savebutton" type="button">Save!</button>
     </body>
