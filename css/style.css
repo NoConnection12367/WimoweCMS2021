@@ -120,14 +120,6 @@ li a:hover, .dropdown:hover .dropbtn {
     float: left;
 }
 
-#picture img {
-    width: 100%;
-}
-
-#picture {
-    margin-bottom: 25px;
-}
-
 /* Body width media queries */
 @media (min-width: 576px) { 
 

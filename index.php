@@ -45,7 +45,17 @@
         <div id="backgroundContainer">
 
             <div id="header" class="container">
-                <h1>Wimowe CMS 2021</h1>
+                <?php
+                    // Load page title from database
+                    $sql = "SELECT * FROM static_content_de WHERE Tag='pageTitle'";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        if ($row = mysqli_fetch_assoc($result)) {
+                            echo $row["Content"];
+                        }
+                    }
+                ?>
             </div>
 
             <div id="navigation">
@@ -107,7 +117,17 @@
             </div>
 
             <div id="footer" class="container">
-                <p>&copy; 2019 by Domi, Moe &amp; Flo</p>
+                <?php
+                    // Load footer content from database
+                    $sql = "SELECT * FROM static_content_de WHERE Tag='footer'";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        if ($row = mysqli_fetch_assoc($result)) {
+                            echo $row["Content"];
+                        }
+                    }
+                ?>
             </div>
 
         </div>

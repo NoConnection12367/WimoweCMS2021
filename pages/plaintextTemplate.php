@@ -5,7 +5,7 @@
     <?php
 
         // Get content of requested site
-        $sql = "SELECT * FROM content_de LEFT JOIN site ON content_de.SiteID = site.ID WHERE Name='" . $page . "' AND Tag='text'";
+        $sql = "SELECT * FROM content_de LEFT JOIN site ON content_de.SiteID = site.ID WHERE Name='" . $page . "'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -14,12 +14,8 @@
             if($row = mysqli_fetch_assoc($result))
             {
                 echo "<h2>" . $row["Name"] . "</h2>";
-            }
-
-            do {
                 echo $row["Content"];
             }
-            while ($row = mysqli_fetch_assoc($result));
         }
     ?>
 </div>
