@@ -26,13 +26,24 @@ $(document).ready(function(){
     $(".media-delBtn").click(function(){
         delFromMediathek($(this).attr('value'));
     });
-});
 
+    $("#media-uploadBtn").mousedown(function(){
+        $('#media-uploadBtn').css('-webkit-box-shadow', 'inset 2px 2px 2px 0px rgba(0,0,0,0.6)');
+        $('#media-uploadBtn').css('-moz-box-shadow', 'inset 2px 2px 2px 0px rgba(0,0,0,0.6)');
+        $('#media-uploadBtn').css('box-shadow', 'inset 2px 2px 2px 0px rgba(0,0,0,0.6)');
+    });
+
+    $("#media-uploadBtn").mouseup(function(){
+        $('#media-uploadBtn').css('-webkit-box-shadow', '2px 2px 2px 0px rgba(0,0,0,0.6);');
+        $('#media-uploadBtn').css('-moz-box-shadow', '2px 2px 2px 0px rgba(0,0,0,0.6);');
+        $('#media-uploadBtn').css('box-shadow', '2px 2px 2px 0px rgba(0,0,0,0.6);');
+    });
+});
 
 function delFromMediathek(val){
     $.ajax({
         url: 'functions.php',
-        type: 'GET',
+        type: 'POST',
         data: {
             'DelID': val
         },
