@@ -20,4 +20,6 @@
 		mysqli_set_charset($conn,"utf8");
 		mysqli_select_db ($conn, "wimowe");
 	}
+
+	session_start();
 ?>
