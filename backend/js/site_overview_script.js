@@ -3,7 +3,7 @@ $(document).ready(function(){
         handle: 'div',
         items: 'li',
         toleranceElement: '> div',
-        maxLevels: 3
+        maxLevels: 2
     });
 
     $("#savebutton").click(function() {
