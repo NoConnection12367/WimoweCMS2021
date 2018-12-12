@@ -2,10 +2,9 @@ $(document).ready(function(){
     var editor = new MediumEditor('.editable');
 
     $("#savebutton").click(function(){
-        $.post( "../pages/content_saver.php", 
+        $.post( "../pages/function.php", 
         { content: $('#editor_content').html(),
-          siteid: getUrlParameter('loadcontenid'),
-          tag: "text"
+          siteid: getUrlParameter('loadcontenid')
     },
         function(status){
             alert("Status: " + status);
