@@ -1,15 +1,16 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var editor = new MediumEditor('.editable');
 
-    $("#savebutton").click(function(){
-        $.post( "../pages/function.php", 
-        { content: $('#editor_content').html(),
-          siteid: getUrlParameter('loadcontenid')
-    },
-        function(status){
-            alert("Status: " + status);
-        });
-    });  
+    $("#savebutton").click(function () {
+        $.post("functions.php",
+            {
+                content: $('#editor_content').html(),
+                siteid: getUrlParameter('loadcontenid')
+            },
+            function (status) {
+                alert("Status: " + status);
+            });
+    });
 });
 
 function getUrlParameter(sParam) {

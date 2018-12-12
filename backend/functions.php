@@ -16,7 +16,7 @@
 	}
 
 	//content saver
-	if (isset($_GET['content']) && isset($_GET['siteid']))
+	if (isset($_POST['content']) && isset($_POST['siteid']))
 	{
 		$content = $_REQUEST["content"];
 		$siteid = $_REQUEST["siteid"];
