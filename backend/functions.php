@@ -1,17 +1,18 @@
 <?php
+	require_once ("config.php");
 
-	if (isset($_POST['DelID']) && !empty($_POST['DelID']))
+	if (isset($_GET['DelID']) && !empty($_GET['DelID']))
 	{
 		print_r('Ich bin drin!');
 
-		$delID = $_POST['DelID'];
+		$delID = $_GET['DelID'];
 	
-		$sql = "DELETE FROM media WHERE DelID=" . $delID;
+		$sql = "DELETE FROM media WHERE ID=" . $delID;
 	
 		print_r($sql);
 		echo "<script>console.log( '" . $sql . "' );</script>";
 
-		//mysqli_query($conn, $sql);
+		mysqli_query($conn, $sql);
 	}
 
 

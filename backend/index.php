@@ -25,7 +25,7 @@
         <div id="navigation">
             <ul>
                 <li><i class="fas fa-search"></i><a href="index.php?page=preview">Vorschau</a></li>
-                <li><i class="far fa-file-alt"></i><a href="index.php?page=">Seiten verwalten</a></li>
+                <li><i class="far fa-file-alt"></i><a href="index.php?page=sites_overview">Seiten verwalten</a></li>
                 <li><i class="far fa-images"></i><a href="index.php?page=mediathek">Mediathek</a></li>
                 <li><i class="fas fa-palette"></i><a href="index.php?page=">Layout & Farben</a></li>
                 <li><i class="fas fa-users-cog"></i><a href="index.php?page=">Rechteverwaltung</a></li>

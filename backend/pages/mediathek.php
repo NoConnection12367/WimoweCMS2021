@@ -1,8 +1,3 @@
-<?php 	
-	//error_reporting(0);
-	require_once ("config.php");
-	//require_once ("functions.php"); 
-?>
 <h1>Mediathek</h1>
 <div id="media-toolbar">
     <form id="form-media-upload" action="upload.php" method="post" enctype="multipart/form-data">
@@ -13,7 +8,7 @@
 <div id="media-container">
 
 <?php
-    $sql = "SELECT * FROM media";
+    $sql = "SELECT * FROM media";     // WHERE entfernen nach testen
     $result = mysqli_query($conn, $sql);
     $i = 0;
 

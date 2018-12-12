@@ -32,8 +32,7 @@ $(document).ready(function(){
 function delFromMediathek(val){
     $.ajax({
         url: 'functions.php',
-        type: 'POST',
-        dataType: 'html',
+        type: 'GET',
         data: {
             'DelID': val
         },

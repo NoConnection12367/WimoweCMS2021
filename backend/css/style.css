@@ -260,6 +260,8 @@ input{
 
     .media{
         min-height: 150px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
 
     }
 
@@ -275,6 +277,11 @@ input{
     
     .media-delBtn{
         float: right;
+    }
+
+    #media-toolbar{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
 
