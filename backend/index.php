@@ -28,7 +28,7 @@
                 <li><i class="far fa-file-alt"></i><a href="index.php?page=sites_overview">Seiten verwalten</a></li>
                 <li><i class="far fa-images"></i><a href="index.php?page=mediathek">Mediathek</a></li>
                 <li><i class="fas fa-palette"></i><a href="index.php?page=">Layout & Farben</a></li>
-                <li><i class="fas fa-users-cog"></i><a href="index.php?page=">Rechteverwaltung</a></li>
+                <li><i class="fas fa-users-cog"></i><a href="index.php?page=rights_management">Rechteverwaltung</a></li>
             </ul>
             <i class="fas fa-angle-double-right toggle-nav" id="toggle-right"></i>
             <i class="fas fa-angle-double-left toggle-nav" id="toggle-left"></i>
