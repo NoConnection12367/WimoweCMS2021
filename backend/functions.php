@@ -1,11 +1,11 @@
 <?php
 	require_once ("config.php");
 
-	if (isset($_GET['DelID']) && !empty($_GET['DelID']))
+	if (isset($_POST['DelID']) && !empty($_POST['DelID']))
 	{
 		print_r('Ich bin drin!');
 
-		$delID = $_GET['DelID'];
+		$delID = $_POST['DelID'];
 	
 		$sql = "DELETE FROM media WHERE ID=" . $delID;
 	

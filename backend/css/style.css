@@ -183,9 +183,7 @@ input{
 }
 
 #media-uploadBtn:hover{
-    -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.6);
-    -moz-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.6);
-    box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.6);
+    opacity: 0.8;
 }
 
 #media-container{
@@ -193,7 +191,7 @@ input{
 }
 
 .media{
-    min-height: 300px;
+    /*min-height: 300px;*/
     width: calc( 100% - 30px );
     padding: 15px;
 }
@@ -208,7 +206,7 @@ input{
 }
 
 .media-imgContainer{
-    height: 150px;
+    max-height: 150px;
     width: 200px;
     margin: 0 auto;
 }
@@ -230,7 +228,7 @@ input{
 }
 
 .media-infos{
-    width: 200px;
+    width: 270px;
     height: 100px;
     margin: 0 auto;
     margin-top: 10px;

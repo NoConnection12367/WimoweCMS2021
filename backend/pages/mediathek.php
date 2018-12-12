@@ -1,6 +1,6 @@
 <h1>Mediathek</h1>
 <div id="media-toolbar">
-    <form id="form-media-upload" action="upload.php" method="post" enctype="multipart/form-data">
+    <form id="form-media-upload" action="functions.php" method="post" enctype="multipart/form-data">
         <input id="media-searchBtn" type="file" name="fileToUpload">
         <input id="media-uploadBtn" type="submit" value="+ Upload" name="submit">
     </form>
@@ -8,7 +8,7 @@
 <div id="media-container">
 
 <?php
-    $sql = "SELECT * FROM media";     // WHERE entfernen nach testen
+    $sql = "SELECT * FROM media WHERE Format!='video'";     // WHERE entfernen nach testen
     $result = mysqli_query($conn, $sql);
     $i = 0;
 
