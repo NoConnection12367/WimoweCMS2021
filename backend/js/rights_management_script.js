@@ -19,9 +19,23 @@ $(document).ready(function () {
 
 function createNewUser() {
 
+    $newPw = $("#newUserModal #newPassword").val();
+    $newPwRepeat = $("#newUserModal #repeatNewPassword").val();
+    $username = $("#newUserModal #username").val();
+
     // Check if passwords match
-    if($("#newUserModal #newPassword").val() != $("#newUserModal #repeatNewPassword").val()) {
+    if($newPw != $newPwRepeat) {
         $("#newUserModal #errorText").html("Die Passwörter stimmen nicht überein!");
+        $("#newUserModal #errorText").css("display", "block");
+    }
+    // Check if username is too short
+    else if ($username.length < 3) {
+        $("#newUserModal #errorText").html("Der Benutzername muss mindestens 3 Zeichen lang sein!");
+        $("#newUserModal #errorText").css("display", "block");
+    }
+    // Check if password is too short
+    else if ($newPw.length < 6) {
+        $("#newUserModal #errorText").html("Das Passwort muss mindestens 6 Zeichen lang sein!");
         $("#newUserModal #errorText").css("display", "block");
     }
     else
@@ -33,8 +47,8 @@ function createNewUser() {
             url: "functions.php", 
             type: "POST",
             data: {
-                username: $("#newUserModal #username").val(),
-                password: $("#newUserModal #newPassword").val(),
+                username: $username,
+                password: $newPw,
                 rightGroup: $("#newUserModal #rightGroup").val()
             },
             success: function(result){
