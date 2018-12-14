@@ -30,6 +30,6 @@
         </div>
 
         <br>
-        <button id="savebutton" type="button">Save!</button>
+        <button id="savebutton" class="buttonStyle">Save!</button>
     </body>
 </html>

@@ -11,6 +11,7 @@
         <title>Wimowe CMS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/rights_management.css" />
         <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
         <script src="js/jquery-3.3.1.min.js"></script>
     </head>

@@ -247,6 +247,30 @@ input{
     color: red;
 }
 
+/* Global button style */
+.buttonStyle {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.6);
+}
+
+.buttonStyle:hover {
+    background-color: rgb(177, 177, 177);
+}
+
+.buttonStyle:active {
+    background-color: rgb(141, 141, 141);
+    border-style: outset;
+}
+
+.buttonStyle:focus {
+    outline: 0;
+}
+
 /* JQuery Ui Lists */
 #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
 #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }

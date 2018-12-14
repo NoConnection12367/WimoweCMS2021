@@ -1,0 +1,19 @@
+
+.rightManagementContainer
+{
+    margin: 20px;
+}
+
+.userTable {
+    border: none;
+    margin-top: 30px;
+}
+
+.userTable th,td {
+    padding: 5px;
+    padding-right: 50px;
+}
+
+#newUserButton {
+    margin-top: 10px;
+}
