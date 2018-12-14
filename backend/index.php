@@ -38,20 +38,31 @@
             <div id=content>
 
             <?php
-            
-				if (isset($_GET["page"])) 
-				{
-					$page = $_GET["page"];
+                // TODO: Remove to activate permission system!
+                $_SESSION["activeUser"] = "Admin";
 
-                    if(is_file($folder_pages . '/' . $page . '.php'))
-                        include($folder_pages . '/' . $page . '.php');
+                // Check if a user is logged in already
+                if (isset($_SESSION["activeUser"]))
+                {
+                    if (isset($_GET["page"]))
+                    {
+                        $page = $_GET["page"];
+
+                        if(is_file($folder_pages . '/' . $page . '.php'))
+                            include($folder_pages . '/' . $page . '.php');
+                        else
+                            include($folder_pages . '/default.php');
+                    }
                     else
-                        include($folder_pages . '/default.php');
-				}
-				else
-				{
-					$page = "preview";
-					include($folder_pages . '/' . $page . '.php');
+                    {
+                        $page = "preview";
+                        include($folder_pages . '/' . $page . '.php');
+                    }
+                }
+                else
+                {
+                    // User is not logged in, load login page
+                    include($folder_pages . '/login_page.php');
                 }
                 
 			?>
