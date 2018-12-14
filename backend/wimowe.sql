@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Dez 2018 um 11:26
+-- Erstellungszeit: 14. Dez 2018 um 19:04
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -40,7 +40,8 @@ CREATE TABLE `content_de` (
 
 INSERT INTO `content_de` (`ID`, `Content`, `SiteID`) VALUES
 (1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.', 1),
-(2, 'Das ist das Impressum.\r\n\r\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.\r\n\r\n-- Ende --', 2);
+(2, ' . <p>\n            Das ist das Impressum.\n\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.</p><p>-- Ende --        </p> . ', 2),
+(4, '<p>Das ist die erste Seite</p>', 3);
 
 -- --------------------------------------------------------
 
@@ -124,9 +125,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Username`, `GroupID`, `PasswordHash`) VALUES
-(1, 'Domi', 2, 'E9DEB0D326BC4E1408FDC3948D9433FFEF26BE470016DB53B76C384694862868'),
-(2, 'Flo', 1, 'E9DEB0D326BC4E1408FDC3948D9433FFEF26BE470016DB53B76C384694862868'),
-(3, 'Moe', 3, 'E9DEB0D326BC4E1408FDC3948D9433FFEF26BE470016DB53B76C384694862868');
+(1, 'Domi', 2, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(2, 'Flo', 1, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(3, 'Moe', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(6, 'Admin', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868');
 
 --
 -- Indizes der exportierten Tabellen
@@ -175,7 +177,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `content_de`
 --
 ALTER TABLE `content_de`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `content_en`
@@ -193,7 +195,7 @@ ALTER TABLE `media`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

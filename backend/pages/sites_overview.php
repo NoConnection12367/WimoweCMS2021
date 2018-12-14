@@ -22,7 +22,7 @@
                 $sites = array();
                 while ($row = mysqli_fetch_assoc($result)) {
                     array_push($sites, [$row["ID"], $row["Name"]]);
-                    echo "<li id=\"siteid_" . $row["ID"] . "\"><div><a href=\"http://localhost/WimoweCMS2021/backend/index.php?page=Editor&loadcontenid=" . $row["ID"] ."\">" . $row["Name"] . "</a></div></li>\n";
+                    echo "<li id=\"siteid_" . $row["ID"] . "\"><div><a href=\"index.php?page=Editor&loadcontenid=" . $row["ID"] ."\">" . $row["Name"] . "</a></div></li>\n";
                 }
             }
             ?>
