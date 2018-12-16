@@ -1,7 +1,19 @@
-<h1>Error 403: You are not allowed to view this page</h1>
 
-<?php
+<script src="js\login_page_script.js" type="text/javascript"></script>
 
-    echo "<h1>Your current right level: " . permissionLevel() . "/<h1>";
-    
-?>
+<div id="loginContainer">
+    <h2>Anmelden</h2>
+
+    <p>Benutzername / E-Mail Adresse:</p>
+    <input id="username" type="text"/>
+
+    <p>Passwort:</p>
+    <input id="password" type="password"/>
+
+    <p id="errorText"></p>
+
+    <div>
+        <button id="loginButton" class="buttonStyle">Jetzt anmelden</button>
+    </div>
+
+</div>

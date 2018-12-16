@@ -1,0 +1,41 @@
+
+/* General layout styling */
+#loginContainer {
+    
+    padding: 30px;
+    display: block;
+    margin: auto;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 15px;
+}
+
+#loginContainer p {
+    margin-top: 10px;
+}
+
+#errorText {
+    display: none;
+    color: red;
+}
+
+
+/* Input & Select styling */
+#loginContainer input, select {
+    width: calc(100% - 20px);
+    padding: 5px;
+    border-style: ridge;
+    border-radius: 5px;
+}
+
+#loginContainer input:focus, select:focus {
+    outline: 0;
+}
+
+@media (min-width: 576px) { 
+
+    #loginContainer {
+        width: 400px;
+    }
+
+}

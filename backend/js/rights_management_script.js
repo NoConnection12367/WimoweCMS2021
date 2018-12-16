@@ -44,7 +44,7 @@ function createNewUser() {
 
         // Submit data to server and see if any errors occur
         $.ajax({
-            url: "functions.php", 
+            url: "postback/create_user_postback.php", 
             type: "POST",
             data: {
                 username: $username,

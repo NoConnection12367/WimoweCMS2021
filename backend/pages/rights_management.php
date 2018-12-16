@@ -32,7 +32,6 @@
 
     <button id="newUserButton" class="buttonStyle">Neuen Benutzer anlegen</button>
 
-
     <!-- Create new user Dialog -->
     <div id="newUserModal" class="modal">
 
@@ -73,6 +72,7 @@
             <div>
                 <button id="createUserButton" class="buttonStyle" type="submit">Benutzer anlegen</button>
             </div>
+
         </div>
 
     </div>
