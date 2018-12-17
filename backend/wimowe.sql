@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Dez 2018 um 16:46
+-- Erstellungszeit: 18. Dez 2018 um 00:02
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -110,6 +110,59 @@ INSERT INTO `site` (`ID`, `Name`, `Visible`, `NavIndex`, `TemplateID`, `Creator`
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `static_content_de`
+--
+
+CREATE TABLE `static_content_de` (
+  `ID` int(11) NOT NULL,
+  `Content` longtext CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL,
+  `Tag` varchar(30) CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `static_content_de`
+--
+
+INSERT INTO `static_content_de` (`ID`, `Content`, `Tag`) VALUES
+(1, '<h2>Text in der Sidebar</h2>\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \r\n\r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \r\n\r\nUt wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \r\n\r\nNam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   \r\n\r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \r\n', 'sidebar'),
+(3, '<h1>Wimowe CMS 2021</h1>', 'pageTitle'),
+(4, '<p>&copy; 2019 by Domi, Moe &amp; Flo</p>', 'footer');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `static_content_en`
+--
+
+CREATE TABLE `static_content_en` (
+  `ID` int(11) NOT NULL,
+  `Content` longtext CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL,
+  `Tag` varchar(30) CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `template`
+--
+
+CREATE TABLE `template` (
+  `ID` int(11) NOT NULL,
+  `Path` varchar(256) COLLATE latin1_german1_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
+
+--
+-- Daten für Tabelle `template`
+--
+
+INSERT INTO `template` (`ID`, `Path`) VALUES
+(1, 'pages/plainTextTemplate.php'),
+(3, 'pages/rightSidebarTemplate.php'),
+(2, 'pages/sidebarTemplate.php');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `user`
 --
 
@@ -129,6 +182,27 @@ INSERT INTO `user` (`ID`, `Username`, `GroupID`, `PasswordHash`) VALUES
 (2, 'Flo', 1, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
 (3, 'Moe', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
 (6, 'Admin', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user_rights`
+--
+
+CREATE TABLE `user_rights` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(30) NOT NULL,
+  `RightLevel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `user_rights`
+--
+
+INSERT INTO `user_rights` (`ID`, `Name`, `RightLevel`) VALUES
+(1, 'Author', 10),
+(2, 'Editor', 20),
+(3, 'Admin', 30);
 
 --
 -- Indizes der exportierten Tabellen
@@ -163,11 +237,38 @@ ALTER TABLE `site`
   ADD UNIQUE KEY `NavIndex` (`NavIndex`);
 
 --
+-- Indizes für die Tabelle `static_content_de`
+--
+ALTER TABLE `static_content_de`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Tag` (`Tag`);
+
+--
+-- Indizes für die Tabelle `static_content_en`
+--
+ALTER TABLE `static_content_en`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Tag` (`Tag`);
+
+--
+-- Indizes für die Tabelle `template`
+--
+ALTER TABLE `template`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Path` (`Path`);
+
+--
 -- Indizes für die Tabelle `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`) USING BTREE,
   ADD UNIQUE KEY `Username` (`Username`);
+
+--
+-- Indizes für die Tabelle `user_rights`
+--
+ALTER TABLE `user_rights`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -192,10 +293,34 @@ ALTER TABLE `media`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT für Tabelle `static_content_de`
+--
+ALTER TABLE `static_content_de`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT für Tabelle `static_content_en`
+--
+ALTER TABLE `static_content_en`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `template`
+--
+ALTER TABLE `template`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT für Tabelle `user_rights`
+--
+ALTER TABLE `user_rights`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
