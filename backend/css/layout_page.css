@@ -1,0 +1,46 @@
+
+#layoutPageContainer {
+    padding: 20px;
+}
+
+#layoutTileContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.layout {
+    display: inline-block;
+    margin-right: 20px;
+    height: 150px;
+    width: 150px;
+    border: 5px solid white;
+}
+
+.layout:hover {
+    border: 5px solid gray;
+}
+
+#layout1 {
+    background-color: red;
+}
+
+#layout2 {
+    background-color: blue;
+}
+
+#layout3 {
+    background-color: green;
+}
+
+/* Input styling */
+#layoutPageContainer input, select {
+    width: calc(100% - 20px);
+    max-width: 300px;
+    padding: 5px;
+    border-style: ridge;
+    border-radius: 5px;
+}
+
+#layoutPageContainer input:focus, select:focus {
+    outline: 0;
+}

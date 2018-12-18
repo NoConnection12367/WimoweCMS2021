@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/rights_management.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/login_page.css" />
         <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+        <link rel="shortcut icon" type="image/x-icon" href="ico.png" />
         <script src="js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
