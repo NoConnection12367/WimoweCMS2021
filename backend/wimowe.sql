@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 18. Dez 2018 um 00:02
--- Server-Version: 10.1.36-MariaDB
--- PHP-Version: 7.2.11
+-- Erstellungszeit: 18. Dez 2018 um 16:13
+-- Server-Version: 10.1.33-MariaDB
+-- PHP-Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,19 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `content_de` (
-  `ID` int(11) NOT NULL,
-  `Content` longtext COLLATE latin1_german1_ci NOT NULL,
-  `SiteID` int(9) NOT NULL
+  `SiteID` int(9) NOT NULL,
+  `Content` longtext COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 --
 -- Daten für Tabelle `content_de`
 --
 
-INSERT INTO `content_de` (`ID`, `Content`, `SiteID`) VALUES
-(1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.', 1),
-(2, ' . <p>\n            Das ist das Impressum.\n\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.</p><p>-- Ende --        </p> . ', 2),
-(4, '<p>Das ist die erste Seite</p>', 3);
+INSERT INTO `content_de` (`SiteID`, `Content`) VALUES
+(1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.'),
+(2, ' . <p>\n            Das ist das Impressum.\n\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.</p><p>-- Ende --        </p> . '),
+(3, '<p>Das ist die erste Seite</p>');
 
 -- --------------------------------------------------------
 
@@ -50,9 +49,8 @@ INSERT INTO `content_de` (`ID`, `Content`, `SiteID`) VALUES
 --
 
 CREATE TABLE `content_en` (
-  `ID` int(11) NOT NULL,
-  `Content` longtext COLLATE latin1_german1_ci NOT NULL,
-  `SiteID` int(9) NOT NULL
+  `SiteID` int(9) NOT NULL,
+  `Content` longtext COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 -- --------------------------------------------------------
@@ -179,9 +177,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Username`, `GroupID`, `PasswordHash`) VALUES
 (1, 'Domi', 2, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
-(2, 'Flo', 1, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
-(3, 'Moe', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
-(6, 'Admin', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868');
+(6, 'Admin', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(7, 'Moe', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(8, 'Flo', 1, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868');
 
 -- --------------------------------------------------------
 
@@ -212,15 +210,13 @@ INSERT INTO `user_rights` (`ID`, `Name`, `RightLevel`) VALUES
 -- Indizes für die Tabelle `content_de`
 --
 ALTER TABLE `content_de`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `SiteID` (`SiteID`);
+  ADD PRIMARY KEY (`SiteID`) USING BTREE;
 
 --
 -- Indizes für die Tabelle `content_en`
 --
 ALTER TABLE `content_en`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Site` (`SiteID`);
+  ADD PRIMARY KEY (`SiteID`) USING BTREE;
 
 --
 -- Indizes für die Tabelle `media`
@@ -275,18 +271,6 @@ ALTER TABLE `user_rights`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `content_de`
---
-ALTER TABLE `content_de`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT für Tabelle `content_en`
---
-ALTER TABLE `content_en`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT für Tabelle `media`
 --
 ALTER TABLE `media`
@@ -314,7 +298,7 @@ ALTER TABLE `template`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT für Tabelle `user_rights`
