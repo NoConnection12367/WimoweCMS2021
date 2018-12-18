@@ -31,7 +31,7 @@
             }
 
             elseif (preg_match($pattern_video, $row['Format']) != "") {
-                echo '<video controls poster="'. $row['Path'] . '">
+                echo '<video controls>
                         <source src="'. $row['Path'] . '" type="video/mp4">
                     </video>';
             }
