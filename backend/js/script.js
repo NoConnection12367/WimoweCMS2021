@@ -23,21 +23,37 @@ $(document).ready(function(){
         $('#navigation li').css('display', 'none');
     });
 
+/* Klick-event zum Löschen von Medien aus der Mediathek */
     $(".media-delBtn").click(function(){
         delFromMediathek($(this).attr('value'));
     });
 
-    $("#media-uploadBtn").mousedown(function(){
-        $('#media-uploadBtn').css('-webkit-box-shadow', 'inset 2px 2px 2px 0px rgba(0,0,0,0.6)');
-        $('#media-uploadBtn').css('-moz-box-shadow', 'inset 2px 2px 2px 0px rgba(0,0,0,0.6)');
-        $('#media-uploadBtn').css('box-shadow', 'inset 2px 2px 2px 0px rgba(0,0,0,0.6)');
+/* Verhindert Neuladen, der Mediathek beim Upload */
+    $("#form-media-upload").submit(function(e){
+        return false;
     });
 
-    $("#media-uploadBtn").mouseup(function(){
-        $('#media-uploadBtn').css('-webkit-box-shadow', '2px 2px 2px 0px rgba(0,0,0,0.6);');
-        $('#media-uploadBtn').css('-moz-box-shadow', '2px 2px 2px 0px rgba(0,0,0,0.6);');
-        $('#media-uploadBtn').css('box-shadow', '2px 2px 2px 0px rgba(0,0,0,0.6);');
+/* Sendet beim Upload-event das file an das php-script */
+    $('#media-uploadBtn').on('click', function() {
+        var file_data = $('#media-searchBtn').prop('files')[0];   
+        var form_data = new FormData();                  
+        form_data.append('file', file_data);
+
+        $.ajax({
+            url: 'functions.php',
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+
+            success: function(){
+                location.reload();
+            }
+        });
     });
+
 });
 
 function delFromMediathek(val){
@@ -50,7 +66,7 @@ function delFromMediathek(val){
 
         success: function()
         { 
-            console.log('deleted successfull');
+            location.reload();  
         },
 
         error: function()

@@ -11,7 +11,27 @@
 
 .userTable th,td {
     padding: 5px;
-    padding-right: 50px;
+}
+
+.userTable .paddingColumn {
+    padding-right: 70px;
+}
+
+/* Delete button styling */
+.user-delBtn{
+    margin: 0 auto;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.user-delBtn:hover{
+    font-size: 22px;
+    color: red;
 }
 
 #newUserButton {

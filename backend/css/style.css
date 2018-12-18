@@ -227,7 +227,7 @@ iframe{
 }
 
 .media-infos{
-    width: 270px;
+    width: 290px;
     height: 100px;
     margin: 0 auto;
     margin-top: 10px;
@@ -240,6 +240,8 @@ iframe{
     font-size: 20px;
     cursor: pointer;
     color: #333;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .media-delBtn:hover{

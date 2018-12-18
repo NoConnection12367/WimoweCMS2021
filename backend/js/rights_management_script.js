@@ -15,6 +15,10 @@ $(document).ready(function () {
         createNewUser();
     });
 
+    $(".user-delBtn").click(function () {
+        deleteUser($(this).attr("value"));
+    });
+
 });
 
 function createNewUser() {
@@ -67,4 +71,23 @@ function createNewUser() {
         });
 
     }
+}
+
+function deleteUser(username) {
+
+    // Submit data to server and see if any errors occur
+    $.ajax({
+        url: "postback/delete_user_postback.php", 
+        type: "POST",
+        data: {
+            username: username
+        },
+        success: function(result){
+            if (result == "Success")
+            {
+                // User deleted successfully, reload page to display refreshed userlist
+                location.reload();
+            }
+        }
+    });
 }
