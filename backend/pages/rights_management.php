@@ -7,8 +7,9 @@
     <!-- Table listing all existing users -->
     <table class="userTable" cellspacing="0">
         <tr class="even">
-            <th>Benutzername</th>
-            <th>Rechtegruppe</th>
+            <th class="paddingColumn">Benutzername</th>
+            <th class="paddingColumn">Rechtegruppe</th>
+            <th></th>
         </tr>
 
         <?php
@@ -23,7 +24,7 @@
                     $i++;
                     $cssType = $i % 2 ? "odd" : "even";
 
-                    echo "<tr class='" . $cssType . "'><td>" . $row["Username"] . "</td><td>" . $row["Name"] . "</td></tr>";
+                    echo "<tr class='" . $cssType . "'><td>" . $row["Username"] . "</td><td>" . $row["Name"] . "</td><td><div class='user-delBtn' value='" . $row["Username"] . "'><i class='fas fa-trash-alt'></i><div></td></tr>";
                 }
             }
         ?>
