@@ -45,7 +45,7 @@
 		$content = $_REQUEST["content"];
 		$siteid = $_REQUEST["siteid"];
 		
-		$sql = "INSERT INTO content_de (Content, SiteID) VALUES ('" . $content . "', '" . $siteid . "')  ON DUPLICATE KEY UPDATE Content=\" . $content . \"";
+		$sql = "INSERT INTO content_de (Content, SiteID) VALUES ('" . $content . "', '" . $siteid . "')  ON DUPLICATE KEY UPDATE Content=\"$content\"";
 		if (mysqli_query($conn, $sql)) {
 			echo "Content wurde gespeichert.";
 		} else {
