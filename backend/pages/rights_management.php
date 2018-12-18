@@ -7,9 +7,9 @@
     <!-- Table listing all existing users -->
     <table class="userTable" cellspacing="0">
         <tr class="even">
-            <th class="paddingColumn">Benutzername</th>
-            <th class="paddingColumn">Rechtegruppe</th>
-            <th></th>
+            <td class="th">Benutzername</td>
+            <td class="th">Rechtegruppe</td>
+            <td></td>
         </tr>
 
         <?php

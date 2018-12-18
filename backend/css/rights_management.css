@@ -1,25 +1,29 @@
 
 .rightManagementContainer
 {
-    margin: 20px;
+    display: block;
+    margin: 0 auto;
+    max-width: 730px;
 }
 
 .userTable {
     border: none;
+    width: 100%;
     margin-top: 30px;
 }
 
+
 .userTable th,td {
     padding: 5px;
+    padding-left: 10px;
 }
 
-.userTable .paddingColumn {
-    padding-right: 70px;
+.userTable .th {
+    font-weight: 600;
 }
 
 /* Delete button styling */
 .user-delBtn{
-    margin: 0 auto;
     width: 28px;
     height: 28px;
     text-align: center;
@@ -27,6 +31,7 @@
     font-size: 20px;
     cursor: pointer;
     color: #333;
+    float: right;
 }
 
 .user-delBtn:hover{

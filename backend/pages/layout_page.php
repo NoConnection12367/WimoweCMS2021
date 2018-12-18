@@ -4,9 +4,9 @@
 </head>
 
 <div id="layoutPageContainer">
-    <h2>Layouteinstellungen</h2>
+    <h2>Layout & Farben</h2>
     <br>
-    <h3>Layout auswählen:</h3>
+    <h3>Farb-Templates:</h3>
 
     <div id="layoutTileContainer">
 
