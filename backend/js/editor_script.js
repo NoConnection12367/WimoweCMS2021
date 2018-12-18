@@ -8,9 +8,11 @@ $(document).ready(function () {
     });
 
     $("#savebutton").click(function () {
+        var allContents = editor.serialize();
+        console.log(allContents.editor_content.value);
         $.post("functions.php",
             {
-                content: $('#editor_content').html(),
+                content: allContents.editor_content.value,
                 siteid: getUrlParameter('loadcontenid')
             },
             function (status) {

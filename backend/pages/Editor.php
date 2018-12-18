@@ -29,7 +29,7 @@
             if (mysqli_num_rows($result) > 0) {
                 $sites = array();
                 while ($row = mysqli_fetch_assoc($result)) {
-                    array_push($sites, [$row["ID"], $row["Content"]]);
+                    array_push($sites, [$row["Content"]]);
                     echo $row["Content"];
                 }
             }
