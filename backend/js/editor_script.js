@@ -1,18 +1,55 @@
 $(document).ready(function () {
-    var editor = new MediumEditor('.editable');
+    tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        theme: 'modern',
+        plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
+        toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        // without images_upload_url set, Upload tab won't show up
+        images_upload_url: 'upload.php',
 
-    $(function () {
-        $('.editable').mediumInsert({
-            editor: editor
-        });
+        // override default upload handler to simulate successful upload
+        images_upload_handler: function (blobInfo, success, failure) {
+            var xhr, formData;
+
+            xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', 'upload.php');
+
+            xhr.onload = function () {
+                var json;
+
+                if (xhr.status != 200) {
+                    failure('HTTP Error: ' + xhr.status);
+                    return;
+                }
+
+                json = JSON.parse(xhr.responseText);
+
+                if (!json || typeof json.location != 'string') {
+                    failure('Invalid JSON: ' + xhr.responseText);
+                    return;
+                }
+
+                success(json.location);
+            };
+
+            formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+            xhr.send(formData);
+        },
+
+
     });
 
     $("#savebutton").click(function () {
-        var allContents = editor.serialize();
-        console.log(allContents.editor_content.value);
+        var content = tinyMCE.get('editor').getContent()
+        console.log(content);
         $.post("functions.php",
             {
-                content: allContents.editor_content.value,
+                content: content,
                 siteid: getUrlParameter('loadcontenid')
             },
             function (status) {

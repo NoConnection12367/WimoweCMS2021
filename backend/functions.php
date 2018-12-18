@@ -10,7 +10,7 @@
 	//content saver
 	if (isset($_POST['content']) && isset($_POST['siteid']))
 	{
-		$content = $_REQUEST["content"];
+		$content = mysqli_real_escape_string($conn,$_REQUEST["content"]);
 		$siteid = $_REQUEST["siteid"];
 		
 		$sql = "INSERT INTO content_de (Content, SiteID) VALUES ('" . $content . "', '" . $siteid . "')  ON DUPLICATE KEY UPDATE Content=\"$content\"";
