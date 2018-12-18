@@ -1,6 +1,12 @@
 $(document).ready(function () {
     var editor = new MediumEditor('.editable');
 
+    $(function () {
+        $('.editable').mediumInsert({
+            editor: editor
+        });
+    });
+
     $("#savebutton").click(function () {
         $.post("functions.php",
             {

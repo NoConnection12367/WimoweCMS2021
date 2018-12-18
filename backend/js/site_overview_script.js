@@ -7,7 +7,7 @@ $(document).ready(function(){
     });
 
     $("#savebutton").click(function() {
-        console.log($('.sortable').nestedSortable('serialize'));
+        console.log($('.sortable').nestedSortable('toArray'));
       });
     
 });
