@@ -8,38 +8,42 @@
 <div id="media-container">
 
 <?php
-    $sql = "SELECT * FROM media WHERE Format!='video'";     // WHERE entfernen nach testen
+    $sql = "SELECT * FROM media";     // WHERE entfernen nach testen
     $result = mysqli_query($conn, $sql);
     $i = 0;
 
     while ($row = mysqli_fetch_assoc($result)) {
 
         $i++;
-        $cssType = $i%2 ? 'odd':'even';
+        $cssType = $i % 2 ? 'odd':'even';
 
 ?>
         <div class="media <?php echo $cssType; ?>" id="media-<?php echo $row['ID']; ?>">
             <div class="media-imgContainer">
             
 <?php
+            $pattern_image = "/(image)\/(.*)/";
+            $pattern_video = "/(video)\/(.*)/";
+            $pattern_pdf = "/application\/pdf/";
 
-            switch ($row['Format']) {
-                case 'image':
-                    echo '<img src="'. $row['Path'] . '"/>';
-                    break;
-                case 'video':
-                    echo '
-                    <video controls poster="'. $row['Path'] . '">
+            if ( preg_match($pattern_image, $row['Format']) != "") {
+                echo '<img src="'. $row['Path'] . '"/>';
+            }
+
+            elseif (preg_match($pattern_video, $row['Format']) != "") {
+                echo '<video controls poster="'. $row['Path'] . '">
                         <source src="'. $row['Path'] . '" type="video/mp4">
                     </video>';
-                    break;
-                case 'pdf':
-                    echo '<i class="far fa-file-pdf"></i>';
-                    break;
-                default:
-                    echo '<i class="fas fa-exclamation-triangle"></i>';
-                    break;
             }
+
+            elseif (preg_match($pattern_pdf, $row['Format']) != "") {
+                echo '<i class="far fa-file-pdf"></i>';
+            }
+
+            else {
+                echo '<i class="fas fa-exclamation-triangle"></i>';
+            }
+            
 ?>
             </div>
             <div class="media-infos">

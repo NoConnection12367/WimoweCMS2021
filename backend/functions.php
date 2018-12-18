@@ -1,10 +1,42 @@
 <?php
 	require_once ("config.php");
 
+	// executed, if media is deleted from mediathek
 	if (isset($_POST['DelID']) && !empty($_POST['DelID']))
 	{	
+		$sql = "SELECT Path FROM media WHERE ID=" . $_POST['DelID'];
+		$res = mysqli_query($conn, $sql);
+
+		if (mysqli_num_rows($res) > 0) {
+			while($row = mysqli_fetch_assoc($res)) {
+				echo $row["Path"];
+				unlink($row["Path"]);
+			}
+		}
+
 		$sql = "DELETE FROM media WHERE ID=" . $_POST['DelID'];
 		mysqli_query($conn, $sql);
+	}
+
+	// save media to media directory for mediathek
+	if (isset($_FILES['file']['tmp_name']) && !empty($_FILES['file']['tmp_name'])){
+		
+		$path = "media/" . $_FILES['file']['name'];
+		$titel = $_FILES['file']['name'];
+		$autor = "Domi"; //später session-inhaber
+		$datum = date("Y-m-d", time());
+		$format = $_FILES['file']['type'];
+
+		$sql = "INSERT INTO media (Path, Titel, Autor, Datum, Format) VALUES ('" . $path . "', '" . $titel . "', '" . $autor . "', '" . $datum . "', '" . $format . "')";
+		mysqli_query($conn, $sql);
+		
+		if ( 0 < $_FILES['file']['error'] ) {
+			echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+		}
+		else {
+			move_uploaded_file($_FILES['file']['tmp_name'], 'media/' . $_FILES['file']['name']);
+		}
+		
 	}
 
 	//content saver
