@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 18. Dez 2018 um 16:13
--- Server-Version: 10.1.33-MariaDB
--- PHP-Version: 7.2.6
+-- Erstellungszeit: 19. Dez 2018 um 17:22
+-- Server-Version: 10.1.36-MariaDB
+-- PHP-Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -99,11 +99,12 @@ CREATE TABLE `site` (
 --
 
 INSERT INTO `site` (`ID`, `Name`, `Visible`, `NavIndex`, `TemplateID`, `Creator`) VALUES
-(1, 'Home', 1, '1', 2, 'Moritz'),
+(1, 'Home', 1, '2', 2, 'Moritz'),
 (2, 'Impressum', 1, '3', 1, 'Moritz'),
-(3, 'Seite 1', 1, '2', 1, 'Moritz'),
-(4, 'Seite 1.1', 1, '2.1', 1, 'Moritz'),
-(5, 'Seite 1.2', 1, '2.2', 1, 'Moritz');
+(3, 'Seite 1', 1, '4', 1, 'Moritz'),
+(4, 'Seite 1.1', 1, '4.1', 1, 'Moritz'),
+(5, 'Seite 1.2', 1, '1', 1, 'Moritz'),
+(6, 'Neue Seite', 1, '5', 1, 'Peter');
 
 -- --------------------------------------------------------
 
@@ -229,8 +230,7 @@ ALTER TABLE `media`
 --
 ALTER TABLE `site`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Name` (`Name`),
-  ADD UNIQUE KEY `NavIndex` (`NavIndex`);
+  ADD UNIQUE KEY `Name` (`Name`);
 
 --
 -- Indizes für die Tabelle `static_content_de`
@@ -275,6 +275,12 @@ ALTER TABLE `user_rights`
 --
 ALTER TABLE `media`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT für Tabelle `site`
+--
+ALTER TABLE `site`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `static_content_de`
