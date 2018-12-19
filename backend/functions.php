@@ -53,6 +53,25 @@
 		}
 	}
 
+	//Save Site Navigation
+	if (isset($_POST['IDArr']) && isset($_POST['NavIndexArr']))
+	{
+		$IDArr = $_REQUEST["IDArr"];
+		$NavIndexArr = $_REQUEST["NavIndexArr"];
+
+		for($i = 0; $i < sizeof($IDArr); $i++){
+			$IDArr[$i];
+			$NavIndexArr[$i];
+			$sql = sprintf("UPDATE site SET NavIndex='%s' WHERE ID='%s'",$NavIndexArr[$i], $IDArr[$i]);
+
+			if (mysqli_query($conn, $sql)) {
+				echo "Content wurde gespeichert.";
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+		}
+	}
+
 
 	// Function to retrieve the current permission level of the logged-in user
 	function permissionLevel() {

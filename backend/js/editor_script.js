@@ -8,6 +8,8 @@ $(document).ready(function () {
         image_advtab: true,
         // without images_upload_url set, Upload tab won't show up
         images_upload_url: 'upload.php',
+        relative_urls: false,
+        remove_script_host: false,
 
         // override default upload handler to simulate successful upload
         images_upload_handler: function (blobInfo, success, failure) {
@@ -45,8 +47,7 @@ $(document).ready(function () {
     });
 
     $("#savebutton").click(function () {
-        var content = tinyMCE.get('editor').getContent()
-        console.log(content);
+        var content = tinyMCE.get('editor').getContent();
         $.post("functions.php",
             {
                 content: content,

@@ -1,6 +1,6 @@
 <?php
 // Allowed origins to upload images
-$accepted_origins = array("http://localhost", "http://107.161.82.130", "http://codexworld.com");
+$accepted_origins = array("http://localhost");
 
 // Images upload path
 $imageFolder = "media/";
