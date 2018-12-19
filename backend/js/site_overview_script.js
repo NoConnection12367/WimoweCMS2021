@@ -23,8 +23,7 @@ $(document).ready(function(){
                 else {
                     Navend++;
                     NavID = NavIDtmp.toString() + "." + Navend.toString();
-                }
-                console.log("ID= " + value.id + " NavIndex= " + NavID)              
+                }            
                 updateArrID.push(value.id);
                 updateArrNavIndex.push(NavID);
             }
@@ -38,4 +37,66 @@ $(document).ready(function(){
               alert("Status: " + status);
           });
       });   
+
+    //Initialize dialog new Site
+    $("#dialog_new").dialog({
+        autoOpen: false,
+    });
+
+    $("#createbutton").click(function() {
+    $("#dialog_new").dialog("open");
+    });
+
+    $('.newsitesaver').on('click', function () {
+        var isvisible_new = 0
+        if ($('.isvisible_new').prop('checked') == true) isvisible_new = 1;
+        $.post("functions.php",
+        {
+            SiteName_new: $('.sitename_new').val(),
+            templateid_new: $('.templateid_new').val(),
+            isvisible_new: isvisible_new
+        },
+        function (status) {
+            alert("Status: " + status);
+            location.reload();
+        });
+        $("#dialog_new").dialog('close');
+    });
+
+    //Initialize dialog Edit Site
+    $("#dialog_edit").dialog({
+        autoOpen: false,
+    });
+
+    $(".editsite").click(function() {
+        var name = $(this).parent().children("a").text();
+        var siteattr = $(this).parent().parent().attr('class').split(" ");
+        var visible = true;
+        if (siteattr[0].split("_").pop() == 0) visible = false;
+        var templateid = siteattr[1].split("_").pop();
+        $("#dialog_edit .sitename").val(name);
+        $("#dialog_edit .templateid").val(templateid);
+        $("#dialog_edit .isvisible").prop('checked', visible);
+        $("#dialog_edit .siteid").text($(this).parent().parent().attr('id').split("_").pop());
+        $("#dialog_edit").dialog("open");
+    });
+
+    $('.editsitesaver').on('click', function () {
+        var isvisible = 0
+        if ($('.isvisible').prop('checked') == true) isvisible = 1;
+        var siteid = $('.siteid').text();
+        $.post("functions.php",
+        {
+            SiteName: $('.sitename').val(),
+            templateid: $('.templateid').val(),
+            isvisible: isvisible,
+            siteid: siteid
+        },
+        function (status) {
+            alert("Status: " + status);
+            location.reload();
+        });
+        $("#dialog_edit").dialog('close');
+    });
+
 });

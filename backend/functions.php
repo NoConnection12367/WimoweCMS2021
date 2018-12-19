@@ -72,6 +72,42 @@
 		}
 	}
 
+	//Add new Site
+	if (isset($_POST['SiteName_new']) && isset($_POST['templateid_new']) && isset($_POST['isvisible_new']))
+	{
+		$name = $_REQUEST["SiteName_new"];
+		$template = $_REQUEST["templateid_new"];
+		$isvisible = $_REQUEST["isvisible_new"];
+
+		//Get highest NavIndex
+		$higestNavinDB = "SELECT `NavIndex` FROM site ORDER BY NavIndex DESC LIMIT 1";
+		$result = mysqli_query($conn, $higestNavinDB);
+		$row = mysqli_fetch_assoc($result);
+		$Navindex = (int)$row ["NavIndex"];
+		$Navindex++;
+		$sql = sprintf("INSERT INTO `site`(`Name`, `NavIndex`, `TemplateID`, `Visible`, `Creator`) VALUES ('%s','%d','%s', %d,'Peter')",$name, $Navindex, $template, $isvisible);
+		if (mysqli_query($conn, $sql)) {
+			echo "Content wurde gespeichert.";
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+	}
+
+	//Update existence Site
+	if (isset($_POST['SiteName']) && isset($_POST['templateid']) && isset($_POST['isvisible']) && isset($_POST['siteid']))
+	{
+		$name = $_REQUEST["SiteName"];
+		$template = $_REQUEST["templateid"];
+		$isvisible = $_REQUEST["isvisible"];
+		$ID = $_REQUEST["siteid"];
+
+		$sql = sprintf("UPDATE site SET Name='%s', Visible='%d', TemplateID='%d' WHERE ID='%s'" ,$name, $isvisible, $template, $ID);
+		if (mysqli_query($conn, $sql)) {
+			echo "Content wurde gespeichert.";
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+	}
 
 	// Function to retrieve the current permission level of the logged-in user
 	function permissionLevel() {
