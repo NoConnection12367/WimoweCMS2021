@@ -5,6 +5,11 @@ $(document).ready(function() {
 
     buildDropDownNavigation();
 
+    // Register language change events
+    $(".languageSelectorButton").click(function() {
+        setLanguage($(this).attr("value"));
+    });
+
 });
 
 function buildDropDownNavigation() {
@@ -13,22 +18,43 @@ function buildDropDownNavigation() {
 
         var li = $(obj);
         var navIndex = li.attr("navIndex");
-
-        // Move item to sublevel if necessary
-        if (navIndex.includes("."))
+        if (navIndex != null)
         {
-            var parentID = navIndex.substring(0, navIndex.indexOf("."));
-            li.remove();
-
-            var parent = $("#navigation ul li:nth-child(" + parentID + ")");
-            parent.addClass("dropdown");
-            parent.children().first().addClass("dropbtn");
-
-            if (parent.find("ul").length == 0)
+            // Move item to sublevel if necessary
+            if (navIndex.includes("."))
             {
-                parent.append("<ul class='dropdown-content'></ul>");
+                var parentID = navIndex.substring(0, navIndex.indexOf("."));
+                li.remove();
+
+                var parent = $("#navigation ul li:nth-child(" + parentID + ")");
+                parent.addClass("dropdown");
+                parent.children().first().addClass("dropbtn");
+
+                if (parent.find("ul").length == 0)
+                {
+                    parent.append("<ul class='dropdown-content'></ul>");
+                }
+                parent.find("ul").append(li);
             }
-            parent.find("ul").append(li);
+        }
+    });
+}
+
+function setLanguage(language) {
+
+    // Send requested language to the server
+    $.ajax({
+        url: "postback/setLanguage.php", 
+        type: "POST",
+        data: {
+            language: language,
+        },
+        success: function(result){
+            if (result == "Success")
+            {
+                // Request successful, reload page
+                location.reload();
+            }
         }
     });
 }

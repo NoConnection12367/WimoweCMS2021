@@ -36,6 +36,23 @@
             mysqli_set_charset($conn,"utf8");
             mysqli_select_db ($conn, "wimowe");
         }
+
+        // Start session, set language to german by default
+        session_start();
+
+        if (!isset($_SESSION["selectedLanguage"])) {
+            $_SESSION["selectedLanguage"] = "Deutsch";
+        }
+
+        if ($_SESSION["selectedLanguage"] == "Deutsch") {
+            $static_content = "static_content_de";
+            $content = "content_de";
+        }
+        else {
+            $static_content = "static_content_en";
+            $content = "content_en";
+        }
+
     ?>
 
 
@@ -47,7 +64,7 @@
             <div id="header" class="container">
                 <?php
                     // Load page title from database
-                    $sql = "SELECT * FROM static_content_de WHERE Tag='pageTitle'";
+                    $sql = "SELECT * FROM " . $static_content . " WHERE Tag='pageTitle'";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
@@ -74,6 +91,13 @@
                             }
                         }
                     ?>
+                    <li class="dropdown languageSelector">
+                        <a class="dropbtn">Sprache</a>
+                        <ul class="dropdown-content">
+                            <li><a href="javascript:void(0)" class="languageSelectorButton" value="Deutsch">Deutsch</a></li>
+                            <li><a href="javascript:void(0)" class="languageSelectorButton" value="Englisch">Englisch</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
@@ -119,7 +143,7 @@
             <div id="footer" class="container">
                 <?php
                     // Load footer content from database
-                    $sql = "SELECT * FROM static_content_de WHERE Tag='footer'";
+                    $sql = "SELECT * FROM " . $static_content . " WHERE Tag='footer'";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {

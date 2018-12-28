@@ -58,6 +58,10 @@ li {
     float: left;
 }
 
+li.languageSelector {
+    float: right;
+}
+
 li a, .dropbtn {
     display: inline-block;
     color: white;

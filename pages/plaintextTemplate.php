@@ -5,7 +5,7 @@
     <?php
 
         // Get content of requested site
-        $sql = "SELECT * FROM content_de LEFT JOIN site ON content_de.SiteID = site.ID WHERE Name='" . $page . "'";
+        $sql = "SELECT * FROM " . $content . " LEFT JOIN site ON " . $content . ".SiteID = site.ID WHERE Name='" . $page . "'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
