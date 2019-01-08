@@ -1,6 +1,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/layout_page.css">
+    <script src="js/layout_page_script.js"></script>
 </head>
 
 <div id="layoutPageContainer">
@@ -17,6 +18,8 @@
     </div>
 
     <h3>Website-Titel:</h3>
-    <input type="text" />
+    <input id="pageTitle" type="text" />
+
+    <button id="saveButton" class="buttonStyle">Speichern</button>
 
 </div>
