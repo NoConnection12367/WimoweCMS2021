@@ -10,10 +10,11 @@ body {
     background-image: url("../resources/backgrounds/what-the-hex-dark.png");
     padding-top: 5px;
     padding-bottom: 5px;
+    color: #f1f1f1;
 }
 
 #backgroundContainer {
-    background: url("../resources/backgrounds/shattered_@2X.png");
+    background: url("../resources/backgrounds/prism.png");
     border-radius: 3px;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -51,7 +52,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(0, 0, 0);
 }
 
 li {
@@ -64,14 +65,14 @@ li.languageSelector {
 
 li a, .dropbtn {
     display: inline-block;
-    color: white;
+    color: #f1f1f1;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: rgb(15, 9, 9);
 }
 
 .dropdown-content li {
@@ -81,21 +82,21 @@ li a:hover, .dropdown:hover .dropbtn {
 .dropdown-content {
     position: absolute;
 	display: none;
-    background-color: #f9f9f9;
+    background-color: #000000;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
+    color: #f1f1f1;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: rgb(15, 9, 9)}
 
 .dropdown:hover .dropdown-content {
     display: block;
