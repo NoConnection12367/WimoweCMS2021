@@ -54,7 +54,10 @@
         <input class="custom-prop" id="h2FontSize" type="text" value='<?php echo "\$h2FontSize"; ?>' /> 
 
         <h3>Text-Schriftgröße:</h3>
-        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo "\$textFontSize"; ?>' />   
+        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo "\$textFontSize"; ?>' /> 
+
+        <h3>Schriftart:</h3>
+        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo "\$Schriftart"; ?>' />   
     
     </div>
 
