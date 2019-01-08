@@ -45,7 +45,7 @@
                             echo "</li>"; 
                         if (strpos($isend, ".") && !strpos($row["NavIndex"], "."))
                             echo "</ol></li>";
-                        echo "<li id=\"siteid_" . $row["ID"] . "\" class=\"visible_" . $row["Visible"] . " template_" . $row["TemplateID"] . "\"><div class='listItem'><a href=\"index.php?page=Editor&loadcontenid=" . $row["ID"] ."&lang=de\">" . $row["Name"] . "</a><a class='editsite'>Bearbeiten</a></div>\n";
+                        echo "<li id=\"siteid_" . $row["ID"] . "\" class=\"visible_" . $row["Visible"] . " template_" . $row["TemplateID"] . "\"><div class='listItem'><a class='siteName' href=\"index.php?page=Editor&loadcontenid=" . $row["ID"] ."&lang=de\">" . $row["Name"] . "</a><a class='editsite'><span>Bearbeiten</span></a></div>\n";
                         $isend = $row["NavIndex"];
                     }
                     if (strpos($isend, ".") && !strpos($row["NavIndex"], "."))
@@ -56,7 +56,6 @@
             </ol>
         </div>
 
-        <br>
         <button id="savebutton" class="buttonStyle">Speichern</button>
         <button id="createbutton" class="buttonStyle">Neue Seite hinzufügen</button>
 
@@ -64,7 +63,7 @@
         <div hidden id="dialog_new" title="Neue Seite hinzufügen">
             Seitenname:
             <input class="inputStyle sitename_new" type="text" />
-            <br>
+            <br><br>
             Template:
             <select class="templateid_new">
                 <?php
@@ -74,23 +73,23 @@
                     if (mysqli_num_rows($result) > 0) {
 
                         while($row = mysqli_fetch_assoc($result)) {
-                            echo "<option value='" . $row["ID"] . "'>" . $row["ID"] . "</option>";
+                            echo "<option value='" . $row["ID"] . "'>" . $row["TemplateName"] . "</option>";
                         }
                     }
                 ?>
             </select> 
 
-            <br>
+            <br><br>
             In Navigation einbinden:
             <input class="isvisible_new" type="checkbox" />
             <br>
-            <button class="buttonStyle newsitesaver">Speichern</button>
+            <button class="buttonStyle newsitesaver">Neue Seite erstellen</button>
         </div>
 
         <div hidden id="dialog_edit" title="Seite bearbeiten">
             Seitenname:
             <input class="inputStyle sitename" type="text" />
-            <br>
+            <br><br>
             Template:
             <select class="templateid">
                 <?php
@@ -100,16 +99,16 @@
                     if (mysqli_num_rows($result) > 0) {
 
                         while($row = mysqli_fetch_assoc($result)) {
-                            echo "<option value='" . $row["ID"] . "'>" . $row["ID"] . "</option>";
+                            echo "<option value='" . $row["ID"] . "'>" . $row["TemplateName"] . "</option>";
                         }
                     }
                 ?>
             </select> 
-            <br>
+            <br><br>
             In Navigation einbinden:
             <input class="isvisible" type="checkbox" />
             <br>
-            <button class="buttonStyle editsitesaver">Seite erstellen</button>
+            <button class="buttonStyle editsitesaver">Speichern</button>
             <button class="buttonStyle editsitedelete">Abbrechen</button>
             <p class="siteid" hidden></p>
         </div>

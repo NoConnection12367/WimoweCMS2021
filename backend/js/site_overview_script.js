@@ -69,7 +69,7 @@ $(document).ready(function(){
     });
 
     $(".editsite").click(function() {
-        var name = $(this).parent().children("a").text();
+        var name = $(this).parent().children(".siteName").text();
         var siteattr = $(this).parent().parent().attr('class').split(" ");
         var visible = true;
         if (siteattr[0].split("_").pop() == 0) visible = false;
