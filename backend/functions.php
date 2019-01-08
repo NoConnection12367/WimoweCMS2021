@@ -40,12 +40,13 @@
 	}
 
 	//content saver
-	if (isset($_POST['content']) && isset($_POST['siteid']))
+	if (isset($_POST['content']) && isset($_POST['siteid']) && isset($_POST['lang']))
 	{
 		$content = mysqli_real_escape_string($conn,$_REQUEST["content"]);
 		$siteid = $_REQUEST["siteid"];
-		
-		$sql = "INSERT INTO content_de (Content, SiteID) VALUES ('" . $content . "', '" . $siteid . "')  ON DUPLICATE KEY UPDATE Content=\"$content\"";
+		$lang = $_REQUEST["lang"];
+
+		$sql = "INSERT INTO content_" . $lang . " (Content, SiteID) VALUES ('" . $content . "', '" . $siteid . "')  ON DUPLICATE KEY UPDATE Content=\"$content\"";
 		if (mysqli_query($conn, $sql)) {
 			echo "Content wurde gespeichert.";
 		} else {

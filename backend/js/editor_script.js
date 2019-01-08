@@ -51,12 +51,23 @@ $(document).ready(function () {
         $.post("functions.php",
             {
                 content: content,
-                siteid: getUrlParameter('loadcontenid')
+                siteid: getUrlParameter('loadcontenid'),
+                lang: getUrlParameter('lang')
             },
             function (status) {
                 alert("Status: " + status);
             });
     });
+
+    $("#langselect").val(getUrlParameter('lang'));
+
+    $("#langselect").change(function(){
+        var url = window.location.href;
+        url = url.slice(0, -2) + $("#langselect").val();
+        window.location = url;
+        console.log(url);
+      }); 
+    
 });
 
 function getUrlParameter(sParam) {

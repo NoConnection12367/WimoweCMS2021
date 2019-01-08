@@ -44,7 +44,7 @@
                         echo "</li>"; 
                     if (strpos($isend, ".") && !strpos($row["NavIndex"], "."))
                         echo "</ol></li>";
-                    echo "<li id=\"siteid_" . $row["ID"] . "\" class=\"visible_" . $row["Visible"] . " template_" . $row["TemplateID"] . "\"><div><a href=\"index.php?page=Editor&loadcontenid=" . $row["ID"] ."\">" . $row["Name"] . "</a><span class='editsite' style='float:right; cursor:pointer'  >Edit</span></div>\n";
+                    echo "<li id=\"siteid_" . $row["ID"] . "\" class=\"visible_" . $row["Visible"] . " template_" . $row["TemplateID"] . "\"><div><a href=\"index.php?page=Editor&loadcontenid=" . $row["ID"] ."&lang=de\">" . $row["Name"] . "</a><span class='editsite' style='float:right; cursor:pointer'  >Edit</span></div>\n";
                     $isend = $row["NavIndex"];
                 }
                 if (strpos($isend, ".") && !strpos($row["NavIndex"], "."))
