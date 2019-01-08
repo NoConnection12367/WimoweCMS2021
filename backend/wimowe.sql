@@ -73,11 +73,11 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`ID`, `Path`, `Titel`, `Autor`, `Datum`, `Format`) VALUES
-(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image'),
-(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image'),
-(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image'),
-(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video'),
-(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'pdf');
+(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image/jpeg'),
+(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image/jpeg'),
+(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image/jpeg'),
+(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video/mp4'),
+(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'application/pdf');
 
 -- --------------------------------------------------------
 
