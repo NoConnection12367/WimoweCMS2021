@@ -52,3 +52,7 @@
 #layoutPageContainer input:focus, select:focus {
     outline: 0;
 }
+
+#custom-css-props>h3 {
+    margin-top: 10px;
+}

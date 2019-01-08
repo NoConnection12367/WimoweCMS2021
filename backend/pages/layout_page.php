@@ -43,8 +43,20 @@
 
     </div>
 
-    <h3>Website-Titel:</h3>
-    <input id="pageTitle" type="text" value='<?php echo $pageTitle; ?>' />
+    <div id="custom-css-props">
+        <h3>Website-Titel:</h3>
+        <input class="custom-prop" id="pageTitle" type="text" value='<?php echo $pageTitle; ?>' />
+
+        <h3>Homepage-Titel-Schriftgröße:</h3>
+        <input class="custom-prop" id="h1FontSize" type="text" value='<?php echo "\$h1FontSize"; ?>' />
+
+        <h3>Seiten-Titel-Schriftgröße:</h3>
+        <input class="custom-prop" id="h2FontSize" type="text" value='<?php echo "\$h2FontSize"; ?>' /> 
+
+        <h3>Text-Schriftgröße:</h3>
+        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo "\$textFontSize"; ?>' />   
+    
+    </div>
 
     <button id="saveButton" class="buttonStyle">Speichern</button>
 
