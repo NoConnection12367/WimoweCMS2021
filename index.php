@@ -69,7 +69,7 @@
 
                     if (mysqli_num_rows($result) > 0) {
                         if ($row = mysqli_fetch_assoc($result)) {
-                            echo $row["Content"];
+                            echo "<h1>" . $row["Content"] . "</h1>";
                         }
                     }
                 ?>

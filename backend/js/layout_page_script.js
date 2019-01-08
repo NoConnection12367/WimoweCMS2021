@@ -2,8 +2,6 @@
 
 $(document).ready(function () {
 
-    // Todo: Load default values
-
     $("#saveButton").click(function () {
         save();
     });
