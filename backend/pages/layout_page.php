@@ -25,7 +25,7 @@
     <div id="layoutTileContainer">
 
         <div id="layout1" class="layout"></div>
-        <div id="layout2" class="layout"></div>
+        <div id="layout2" class="layout selected"></div>
         <div id="layout3" class="layout"></div>
 
     </div>

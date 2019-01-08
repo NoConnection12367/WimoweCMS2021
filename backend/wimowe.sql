@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Dez 2018 um 17:22
--- Server-Version: 10.1.36-MariaDB
--- PHP-Version: 7.2.11
+-- Erstellungszeit: 08. Jan 2019 um 14:58
+-- Server-Version: 10.1.33-MariaDB
+-- PHP-Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,18 +29,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `content_de` (
-  `SiteID` int(9) NOT NULL,
-  `Content` longtext COLLATE latin1_german1_ci NOT NULL
+  `ID` int(11) NOT NULL,
+  `Content` longtext COLLATE latin1_german1_ci NOT NULL,
+  `SiteID` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 --
 -- Daten für Tabelle `content_de`
 --
 
-INSERT INTO `content_de` (`SiteID`, `Content`) VALUES
-(1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.'),
-(2, ' . <p>\n            Das ist das Impressum.\n\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.</p><p>-- Ende --        </p> . '),
-(3, '<p>Das ist die erste Seite</p>');
+INSERT INTO `content_de` (`ID`, `Content`, `SiteID`) VALUES
+(1, 'Willkommen bei Wimowe CMS 2021!\r\nGratulation, sie haben sich für das richtige Content Management System entschieden.\r\n\r\nWimowe CMS 2021 ist ein <b>futuristisches</b> und <h3>fortschrittliches</h3> CMS System.', 1),
+(2, ' . <p>\n            Das ist das Impressum.\n\nBei rechtlichen Angelegenheiten wenden Sie sich bitte an boris420@you-spam.com.</p><p>-- Ende --        </p> . ', 2),
+(4, '<p>Das ist die erste Seite</p>', 3);
 
 -- --------------------------------------------------------
 
@@ -49,8 +50,9 @@ INSERT INTO `content_de` (`SiteID`, `Content`) VALUES
 --
 
 CREATE TABLE `content_en` (
-  `SiteID` int(9) NOT NULL,
-  `Content` longtext COLLATE latin1_german1_ci NOT NULL
+  `ID` int(11) NOT NULL,
+  `Content` longtext COLLATE latin1_german1_ci NOT NULL,
+  `SiteID` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 -- --------------------------------------------------------
@@ -73,11 +75,11 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`ID`, `Path`, `Titel`, `Autor`, `Datum`, `Format`) VALUES
-(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image/jpeg'),
-(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image/jpeg'),
-(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image/jpeg'),
-(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video/mp4'),
-(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'application/pdf');
+(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image'),
+(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image'),
+(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image'),
+(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video'),
+(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'pdf');
 
 -- --------------------------------------------------------
 
@@ -99,12 +101,11 @@ CREATE TABLE `site` (
 --
 
 INSERT INTO `site` (`ID`, `Name`, `Visible`, `NavIndex`, `TemplateID`, `Creator`) VALUES
-(1, 'Home', 1, '2', 2, 'Moritz'),
+(1, 'Home', 1, '1', 2, 'Moritz'),
 (2, 'Impressum', 1, '3', 1, 'Moritz'),
-(3, 'Seite 1', 1, '4', 1, 'Moritz'),
-(4, 'Seite 1.1', 1, '4.1', 1, 'Moritz'),
-(5, 'Seite 1.2', 1, '1', 1, 'Moritz'),
-(6, 'Neue Seite', 1, '5', 1, 'Peter');
+(3, 'Seite 1', 1, '2', 1, 'Moritz'),
+(4, 'Seite 1.1', 1, '2.1', 1, 'Moritz'),
+(5, 'Seite 1.2', 1, '2.2', 1, 'Moritz');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,7 @@ CREATE TABLE `static_content_de` (
 
 INSERT INTO `static_content_de` (`ID`, `Content`, `Tag`) VALUES
 (1, '<h2>Text in der Sidebar</h2>\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \r\n\r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \r\n\r\nUt wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \r\n\r\nNam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   \r\n\r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \r\n', 'sidebar'),
-(3, '<h1>Wimowe CMS 2021</h1>', 'pageTitle'),
+(3, 'Wimowe CMS 2021', 'pageTitle'),
 (4, '<p>&copy; 2019 by Domi, Moe &amp; Flo</p>', 'footer');
 
 -- --------------------------------------------------------
@@ -138,6 +139,15 @@ CREATE TABLE `static_content_en` (
   `Content` longtext CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL,
   `Tag` varchar(30) CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `static_content_en`
+--
+
+INSERT INTO `static_content_en` (`ID`, `Content`, `Tag`) VALUES
+(1, 'Wimowe CMS 2021 - English Version', 'pageTitle'),
+(2, '<p>&copy; 2019 by Domi, Moe &amp; Flo</p>', 'footer'),
+(3, '<h2>English Sidebar</h2>\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo', 'sidebar');
 
 -- --------------------------------------------------------
 
@@ -178,9 +188,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Username`, `GroupID`, `PasswordHash`) VALUES
 (1, 'Domi', 2, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
-(6, 'Admin', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
-(7, 'Moe', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
-(8, 'Flo', 1, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868');
+(2, 'Flo', 1, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(3, 'Moe', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868'),
+(6, 'Admin', 3, 'e9deb0d326bc4e1408fdc3948d9433ffef26be470016db53b76c384694862868');
 
 -- --------------------------------------------------------
 
@@ -211,13 +221,15 @@ INSERT INTO `user_rights` (`ID`, `Name`, `RightLevel`) VALUES
 -- Indizes für die Tabelle `content_de`
 --
 ALTER TABLE `content_de`
-  ADD PRIMARY KEY (`SiteID`) USING BTREE;
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `SiteID` (`SiteID`);
 
 --
 -- Indizes für die Tabelle `content_en`
 --
 ALTER TABLE `content_en`
-  ADD PRIMARY KEY (`SiteID`) USING BTREE;
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Site` (`SiteID`);
 
 --
 -- Indizes für die Tabelle `media`
@@ -230,7 +242,8 @@ ALTER TABLE `media`
 --
 ALTER TABLE `site`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Name` (`Name`);
+  ADD UNIQUE KEY `Name` (`Name`),
+  ADD UNIQUE KEY `NavIndex` (`NavIndex`);
 
 --
 -- Indizes für die Tabelle `static_content_de`
@@ -271,16 +284,22 @@ ALTER TABLE `user_rights`
 --
 
 --
+-- AUTO_INCREMENT für Tabelle `content_de`
+--
+ALTER TABLE `content_de`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT für Tabelle `content_en`
+--
+ALTER TABLE `content_en`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT für Tabelle `media`
 --
 ALTER TABLE `media`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT für Tabelle `site`
---
-ALTER TABLE `site`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `static_content_de`
@@ -292,7 +311,7 @@ ALTER TABLE `static_content_de`
 -- AUTO_INCREMENT für Tabelle `static_content_en`
 --
 ALTER TABLE `static_content_en`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT für Tabelle `template`
@@ -304,7 +323,7 @@ ALTER TABLE `template`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `user_rights`

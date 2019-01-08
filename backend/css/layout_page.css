@@ -20,6 +20,10 @@
     border: 5px solid gray;
 }
 
+.layout.selected {
+    border: 5px solid black;
+}
+
 #layout1 {
     background-color: red;
 }
