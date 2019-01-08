@@ -48,7 +48,7 @@ body {
     margin: 5px 5px;
 }
 
-.user-icon {
+.fa-sign-out-alt {
 	color: #BBB;
     padding: 10px;
     font-size: 30px;
@@ -60,7 +60,7 @@ body {
     border-right: 1px solid #333;
 }
 
-.user-icon:hover{
+.fa-sign-out-alt:hover{
     opacity: 0.7;
     cursor: pointer;
 }

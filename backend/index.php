@@ -21,7 +21,7 @@
         <div class="wrapper">   
             <div id="header">
                 <p>CMS Konfigurator</p>
-                <i class="fas fa-user user-icon"></i>
+                <a href="?page=logout_page"><i class="fas fa-sign-out-alt"></i></a>
             </div>
 
         </div>
