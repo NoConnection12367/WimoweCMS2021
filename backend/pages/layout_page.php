@@ -25,6 +25,10 @@
 
         if ($row = mysqli_fetch_assoc($result)) {
             $cssPath = $row["cssPath"];
+            $websiteFontSize = $row["WebsiteFontSize"];
+            $siteFontSize = $row["SiteFontSize"];
+            $textFontSize = $row["TextFontSize"];
+            $fontFamily = $row["FontFamily"];
         }
     }
 ?>
@@ -36,10 +40,10 @@
 
     <div id="layoutTileContainer">
 
-        <div id="layout1" class="layout <?php if ($cssPath == "css/style.1.css") echo "selected" ?>" cssPath="css/style.1.css"></div>
-        <div id="layout2" class="layout <?php if ($cssPath == "css/style.2.css") echo "selected" ?>" cssPath="css/style.2.css"></div>
-        <div id="layout3" class="layout <?php if ($cssPath == "css/style.3.css") echo "selected" ?>" cssPath="css/style.3.css"></div>
-        <div id="layout4" class="layout <?php if ($cssPath == "css/style.4.css") echo "selected" ?>" cssPath="css/style.4.css"></div>
+        <div id="layout1" class="layout <?php if ($cssPath == "css/style.css") echo "selected" ?>" cssPath="css/style.css"></div>
+        <div id="layout2" class="layout <?php if ($cssPath == "css/style_flower.css") echo "selected" ?>" cssPath="css/style_flower.css"></div>
+        <div id="layout3" class="layout <?php if ($cssPath == "css/style_business.css") echo "selected" ?>" cssPath="css/style_business.css"></div>
+        <div id="layout4" class="layout <?php if ($cssPath == "css/style_hexdark.css") echo "selected" ?>" cssPath="css/style_hexdark.css"></div>
 
     </div>
 
@@ -47,17 +51,17 @@
         <h3>Website-Titel:</h3>
         <input class="custom-prop" id="pageTitle" type="text" value='<?php echo $pageTitle; ?>' />
 
-        <h3>Homepage-Titel-Schriftgröße:</h3>
-        <input class="custom-prop" id="h1FontSize" type="text" value='<?php echo "\$h1FontSize"; ?>' />
+        <h3>Website-Titel-Schriftgröße:</h3>
+        <input class="custom-prop" id="websiteFontSize" type="text" value='<?php echo $websiteFontSize; ?>' />
 
         <h3>Seiten-Titel-Schriftgröße:</h3>
-        <input class="custom-prop" id="h2FontSize" type="text" value='<?php echo "\$h2FontSize"; ?>' /> 
+        <input class="custom-prop" id="siteFontSize" type="text" value='<?php echo $siteFontSize; ?>' /> 
 
         <h3>Text-Schriftgröße:</h3>
-        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo "\$textFontSize"; ?>' /> 
+        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo $textFontSize; ?>' /> 
 
         <h3>Schriftart:</h3>
-        <input class="custom-prop" id="textFontSize" type="text" value='<?php echo "\$Schriftart"; ?>' />   
+        <input class="custom-prop" id="fontFamily" type="text" value='<?php echo $fontFamily; ?>' />   
     
     </div>
 
