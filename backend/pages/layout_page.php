@@ -6,6 +6,7 @@
 
 <?php
 
+    // Get page title from database
     $sql = "SELECT content FROM static_content_de WHERE Tag='pageTitle'";
     $result = mysqli_query($conn, $sql);
 
@@ -13,6 +14,17 @@
 
         while ($row = mysqli_fetch_assoc($result)) {
             $pageTitle = $row["content"];
+        }
+    }
+
+    // Get layout definitions from database
+    $sql = "SELECT * FROM layout WHERE ID='1'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            $cssPath = $row["cssPath"];
         }
     }
 ?>
@@ -24,9 +36,10 @@
 
     <div id="layoutTileContainer">
 
-        <div id="layout1" class="layout"></div>
-        <div id="layout2" class="layout selected"></div>
-        <div id="layout3" class="layout"></div>
+        <div id="layout1" class="layout <?php if ($cssPath == "css/style.1.css") echo "selected" ?>" cssPath="css/style.1.css"></div>
+        <div id="layout2" class="layout <?php if ($cssPath == "css/style.2.css") echo "selected" ?>" cssPath="css/style.2.css"></div>
+        <div id="layout3" class="layout <?php if ($cssPath == "css/style.3.css") echo "selected" ?>" cssPath="css/style.3.css"></div>
+        <div id="layout4" class="layout <?php if ($cssPath == "css/style.4.css") echo "selected" ?>" cssPath="css/style.4.css"></div>
 
     </div>
 

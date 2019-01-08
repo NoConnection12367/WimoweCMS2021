@@ -6,6 +6,11 @@ $(document).ready(function () {
         save();
     });
 
+    $(".layout").click(function () {
+        $(".layout").removeClass("selected");
+        $(this).addClass("selected");
+    });
+
 });
 
 function save() {

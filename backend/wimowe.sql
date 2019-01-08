@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 08. Jan 2019 um 14:58
+-- Erstellungszeit: 08. Jan 2019 um 15:39
 -- Server-Version: 10.1.33-MariaDB
 -- PHP-Version: 7.2.6
 
@@ -58,6 +58,25 @@ CREATE TABLE `content_en` (
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `layout`
+--
+
+CREATE TABLE `layout` (
+  `ID` int(11) NOT NULL,
+  `cssPath` text COLLATE latin1_german1_ci NOT NULL,
+  `fontSize` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
+
+--
+-- Daten für Tabelle `layout`
+--
+
+INSERT INTO `layout` (`ID`, `cssPath`, `fontSize`) VALUES
+(1, 'css/style.2.css', 12);
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `media`
 --
 
@@ -75,11 +94,11 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`ID`, `Path`, `Titel`, `Autor`, `Datum`, `Format`) VALUES
-(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image'),
-(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image'),
-(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image'),
-(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video'),
-(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'pdf');
+(1, 'media/eichhorn1.jpg', 'eichhorn1', 'Domi', '2018-12-08', 'image/jpeg'),
+(2, 'media/eichhorn2.jpg', 'eichhorn2', 'Domi', '2018-12-08', 'image/jpeg'),
+(3, 'media/eichhorn3.jpg', 'eichhorn3', 'Domi', '2018-12-08', 'image/jpeg'),
+(4, 'media/SampleVideo_1280x720_1mb.mp4', 'Hase_macht_Sachen.mp4', 'Domi', '2018-12-09', 'video/mp4'),
+(5, 'media/infosec_wise2016-17_final.pdf', 'infosec_wise2016-17_final.pdf', 'Domi', '2018-12-09', 'application/pdf');
 
 -- --------------------------------------------------------
 
@@ -230,6 +249,12 @@ ALTER TABLE `content_de`
 ALTER TABLE `content_en`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Site` (`SiteID`);
+
+--
+-- Indizes für die Tabelle `layout`
+--
+ALTER TABLE `layout`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indizes für die Tabelle `media`
