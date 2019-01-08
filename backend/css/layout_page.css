@@ -25,19 +25,23 @@
 }
 
 #layout1 {
-    background-color: red;
+    background-image: url("../../resources/thumbnails/style_default.PNG");
+    background-size: cover;
 }
 
 #layout2 {
-    background-color: blue;
+    background-image: url("../../resources/thumbnails/style_flower.PNG");
+    background-size: cover;
 }
 
 #layout3 {
-    background-color: green;
+    background-image: url("../../resources/thumbnails/style_hexdark.PNG");
+    background-size: cover;
 }
 
 #layout4 {
-    background-color: yellow;
+    background-image: url("../../resources/thumbnails/style_business.PNG");
+    background-size: cover;
 }
 
 /* Input styling */
