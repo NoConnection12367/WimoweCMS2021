@@ -99,4 +99,18 @@ $(document).ready(function(){
         $("#dialog_edit").dialog('close');
     });
 
+    $('.editsitedelete').on('click', function () {
+        var siteid = $('.siteid').text();
+        $.post("functions.php",
+        {
+            delete: "delete",
+            siteid: siteid
+        },
+        function (status) {
+            alert("Status: " + status);
+            location.reload();
+        });
+        $("#dialog_edit").dialog('close');
+    });
+
 });

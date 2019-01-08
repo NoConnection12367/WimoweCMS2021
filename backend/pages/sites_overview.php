@@ -16,8 +16,8 @@
     </head>
     
     <body>
+        <h1>Seitenverwalten</h1>
         <!-- Seitenauswahl -->
-        <div class="wrapper">
         <ol class="sortable">
             <?php
             // Function to check the string is ends  
@@ -53,7 +53,6 @@
             }
             ?>
         </ol>
-        </div>
 
         <br>
         <button id="savebutton" class="buttonStyle">Save!</button>
@@ -82,6 +81,7 @@
             <input class="isvisible" type="checkbox" />
             <br>
             <button class="editsitesaver">Save me!</button>
+            <button class="editsitedelete">Delete me!</button>
             <p class="siteid" hidden></p>
         </div>
     </body>

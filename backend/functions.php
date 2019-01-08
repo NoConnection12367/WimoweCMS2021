@@ -109,6 +109,19 @@
 		}
 	}
 
+	//Delete Site
+	if (isset($_POST['delete']) && isset($_POST['siteid']))
+	{
+		$ID = $_REQUEST["siteid"];
+
+		$sql = sprintf("DELETE FROM `site` WHERE `ID`=%d", $ID);
+		if (mysqli_query($conn, $sql)) {
+			echo "Content wurde gelöscht.";
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+	}
+
 	// Function to retrieve the current permission level of the logged-in user
 	function permissionLevel() {
 
