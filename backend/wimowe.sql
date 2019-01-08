@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 08. Jan 2019 um 15:39
--- Server-Version: 10.1.33-MariaDB
--- PHP-Version: 7.2.6
+-- Erstellungszeit: 08. Jan 2019 um 18:19
+-- Server-Version: 10.1.37-MariaDB
+-- PHP-Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,15 +64,18 @@ CREATE TABLE `content_en` (
 CREATE TABLE `layout` (
   `ID` int(11) NOT NULL,
   `cssPath` text COLLATE latin1_german1_ci NOT NULL,
-  `fontSize` int(11) NOT NULL
+  `WebsiteFontSize` int(11) NOT NULL,
+  `SiteFontSize` int(11) NOT NULL,
+  `TextFontSize` int(11) NOT NULL,
+  `FontFamily` text COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 --
 -- Daten für Tabelle `layout`
 --
 
-INSERT INTO `layout` (`ID`, `cssPath`, `fontSize`) VALUES
-(1, 'css/style.2.css', 12);
+INSERT INTO `layout` (`ID`, `cssPath`, `WebsiteFontSize`, `SiteFontSize`, `TextFontSize`, `FontFamily`) VALUES
+(1, 'css/style.css', 32, 24, 16, 'sans-serif');
 
 -- --------------------------------------------------------
 
@@ -164,7 +167,7 @@ CREATE TABLE `static_content_en` (
 --
 
 INSERT INTO `static_content_en` (`ID`, `Content`, `Tag`) VALUES
-(1, 'Wimowe CMS 2021 - English Version', 'pageTitle'),
+(1, 'Wimowe CMS 2021', 'pageTitle'),
 (2, '<p>&copy; 2019 by Domi, Moe &amp; Flo</p>', 'footer'),
 (3, '<h2>English Sidebar</h2>\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo', 'sidebar');
 
@@ -176,17 +179,18 @@ INSERT INTO `static_content_en` (`ID`, `Content`, `Tag`) VALUES
 
 CREATE TABLE `template` (
   `ID` int(11) NOT NULL,
-  `Path` varchar(256) COLLATE latin1_german1_ci NOT NULL
+  `Path` varchar(256) COLLATE latin1_german1_ci NOT NULL,
+  `TemplateName` text COLLATE latin1_german1_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
 --
 -- Daten für Tabelle `template`
 --
 
-INSERT INTO `template` (`ID`, `Path`) VALUES
-(1, 'pages/plainTextTemplate.php'),
-(3, 'pages/rightSidebarTemplate.php'),
-(2, 'pages/sidebarTemplate.php');
+INSERT INTO `template` (`ID`, `Path`, `TemplateName`) VALUES
+(1, 'pages/plainTextTemplate.php', 'ohneSidebar'),
+(2, 'pages/sidebarTemplate.php', 'leftSidebar'),
+(3, 'pages/rightSidebarTemplate.php', 'rightSidebar');
 
 -- --------------------------------------------------------
 
