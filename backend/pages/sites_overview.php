@@ -19,7 +19,7 @@
         <h1>Seitenverwalten</h1>
         <!-- Seitenauswahl -->
         <ol class="sortable">
-            <?php
+        <?php
             // Function to check the string is ends  
             // with given substring or not 
             function endsWith($string, $endString) 
@@ -62,7 +62,20 @@
             <input class="sitename_new" type="text" />
             <br>
             Enter Template ID:
-            <input class="templateid_new" type="text" />
+            <select class="templateid_new">
+                <?php
+                    $sql = "SELECT * FROM template ORDER BY ID";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row["ID"] . "'>" . $row["ID"] . "</option>";
+                        }
+                    }
+                ?>
+            </select> 
+
             <br>
             Is Visible?:
             <input class="isvisible_new" type="checkbox" />
@@ -75,7 +88,19 @@
             <input class="sitename" type="text" />
             <br>
             Enter Template ID:
-            <input class="templateid" type="text" />
+            <select class="templateid">
+                <?php
+                    $sql = "SELECT * FROM template ORDER BY ID";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row["ID"] . "'>" . $row["ID"] . "</option>";
+                        }
+                    }
+                ?>
+            </select> 
             <br>
             Is Visible?:
             <input class="isvisible" type="checkbox" />
