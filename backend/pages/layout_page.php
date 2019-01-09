@@ -40,10 +40,10 @@
 
     <div id="layoutTileContainer">
 
-        <div id="layout1" class="layout <?php if ($cssPath == "css/style.css") echo "selected" ?>" cssPath="css/style.css"></div>
-        <div id="layout2" class="layout <?php if ($cssPath == "css/style_flower.css") echo "selected" ?>" cssPath="css/style_flower.css"></div>
-        <div id="layout3" class="layout <?php if ($cssPath == "css/style_business.css") echo "selected" ?>" cssPath="css/style_business.css"></div>
-        <div id="layout4" class="layout <?php if ($cssPath == "css/style_hexdark.css") echo "selected" ?>" cssPath="css/style_hexdark.css"></div>
+        <div class="layout <?php if ($cssPath == "css/style.css") echo "selected" ?>" cssPath="css/style.css"><div class="layoutTileBackground" id="layout1"></div></div>
+        <div class="layout <?php if ($cssPath == "css/style_flower.css") echo "selected" ?>" cssPath="css/style_flower.css"><div class="layoutTileBackground" id="layout2"></div></div>
+        <div class="layout <?php if ($cssPath == "css/style_business.css") echo "selected" ?>" cssPath="css/style_business.css"><div class="layoutTileBackground" id="layout3"></div></div>
+        <div class="layout <?php if ($cssPath == "css/style_hexdark.css") echo "selected" ?>" cssPath="css/style_hexdark.css"><div class="layoutTileBackground" id="layout4"></div></div>
 
     </div>
 

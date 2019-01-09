@@ -21,27 +21,30 @@
 }
 
 .layout.selected {
-    border: 5px solid black;
+    border: 5px double black;
+}
+
+.layoutTileBackground {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
 }
 
 #layout1 {
     background-image: url("../../resources/thumbnails/style_default.PNG");
-    background-size: cover;
 }
 
 #layout2 {
     background-image: url("../../resources/thumbnails/style_flower.PNG");
-    background-size: cover;
 }
 
 #layout3 {
     background-image: url("../../resources/thumbnails/style_hexdark.PNG");
-    background-size: cover;
 }
 
 #layout4 {
     background-image: url("../../resources/thumbnails/style_business.PNG");
-    background-size: cover;
 }
 
 /* Input styling */
