@@ -55,8 +55,32 @@ $(document).ready(function () {
                 lang: getUrlParameter('lang')
             },
             function (status) {
-                alert("Status: " + status);
+                //alert("Status: " + status);
+                alert("Änderungen wurden gespeichert.");
+                url = "http://localhost/WimoweCMS2021/backend/index.php?page=sites_overview"
+                window.location = url;
             });
+    });
+
+    $("#savebutton_static").click(function () {
+        var content = tinyMCE.get('editor').getContent();
+        $.post("functions.php",
+            {
+                content: content,
+                Tag: getUrlParameter('loadcontenid'),
+                lang: getUrlParameter('lang')
+            },
+            function (status) {
+                //alert("Status: " + status);
+                alert("Änderungen wurden gespeichert.");
+                url = "http://localhost/WimoweCMS2021/backend/index.php?page=sites_overview"
+                window.location = url;
+            });
+    });
+
+    $("#abbrechenbutton").click(function () {
+        url = "http://localhost/WimoweCMS2021/backend/index.php?page=sites_overview"
+        window.location = url;
     });
 
     $("#langselect").val(getUrlParameter('lang'));
@@ -67,7 +91,6 @@ $(document).ready(function () {
         window.location = url;
         console.log(url);
       }); 
-    
 });
 
 function getUrlParameter(sParam) {

@@ -34,7 +34,8 @@ $(document).ready(function(){
               NavIndexArr: updateArrNavIndex
           },
           function (status) {
-              alert("Status: " + status);
+              //alert("Status: " + status);
+              alert("Änderungen wurden gespeichert.");
           });
       });   
 
@@ -57,10 +58,21 @@ $(document).ready(function(){
             isvisible_new: isvisible_new
         },
         function (status) {
-            alert("Status: " + status);
+            //alert("Status: " + status);
+            alert("Änderungen wurden gespeichert.");
             location.reload();
         });
         $("#dialog_new").dialog('close');
+    });
+
+    $('#sidebarbutton').on('click', function () {
+        url = "http://localhost/WimoweCMS2021/backend/index.php?page=Editor_Sidebar&loadcontenid=sidebar&lang=de"
+        window.location = url;
+    });
+
+    $('#footerbutton').on('click', function () {
+        url = "http://localhost/WimoweCMS2021/backend/index.php?page=Editor_Sidebar&loadcontenid=footer&lang=de"
+        window.location = url;
     });
 
     //Initialize dialog Edit Site
@@ -93,7 +105,8 @@ $(document).ready(function(){
             siteid: siteid
         },
         function (status) {
-            alert("Status: " + status);
+            //alert("Status: " + status);
+            alert("Änderungen wurden gespeichert.");
             location.reload();
         });
         $("#dialog_edit").dialog('close');
@@ -107,7 +120,8 @@ $(document).ready(function(){
             siteid: siteid
         },
         function (status) {
-            alert("Status: " + status);
+            //alert("Status: " + status);
+            alert("Änderungen wurden gespeichert.");
             location.reload();
         });
         $("#dialog_edit").dialog('close');

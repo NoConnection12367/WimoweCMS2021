@@ -8,14 +8,14 @@
         <h1>
             <?php
             $contetid = $_GET["loadcontenid"];
-            $sql = "SELECT * FROM site WHERE ID='$contetid'";
+            $sql = "SELECT * FROM static_content_de WHERE tag='$contetid'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 $sites = array();
                 while ($row = mysqli_fetch_assoc($result)) {
-                    array_push($sites, [$row["Name"]]);
-                    echo $row["Name"];
+                    array_push($sites, [$row["Tag"]]);
+                    echo $row["Tag"];
                 }
             }
             ?>
@@ -24,13 +24,13 @@
         <select id="langselect" style="width:100%">
             <option value="de">Deutsch</option>
             <option value="en">English</option>
-        </select> 
+        </select>
 
         <textarea id="editor">
             <?php
             $contetid = $_GET["loadcontenid"];
             $lang = $_GET["lang"];
-            $sql = "SELECT * FROM content_". $lang . " WHERE SiteID='$contetid'";
+            $sql = "SELECT * FROM static_content_". $lang . " WHERE Tag='$contetid'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -43,7 +43,7 @@
             ?>
         </textarea>
 
-        <button id="savebutton" class="buttonStyle" type="button">Save!</button>
+        <button id="savebutton_static" class="buttonStyle" type="button">Save!</button>
         <button id="abbrechenbutton" class="buttonStyle" type="button">Abbrechen</button>
     </body>
 </html>

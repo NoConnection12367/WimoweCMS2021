@@ -58,7 +58,8 @@
 
         <button id="savebutton" class="buttonStyle">Speichern</button>
         <button id="createbutton" class="buttonStyle">Neue Seite hinzufügen</button>
-
+        <button id="sidebarbutton" class="buttonStyle">Sidebar editieren</button>
+        <button id="footerbutton" class="buttonStyle">Footer editieren</button>
 
         <div hidden id="dialog_new" title="Neue Seite hinzufügen">
             Seitenname:

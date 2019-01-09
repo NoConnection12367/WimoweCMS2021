@@ -54,6 +54,21 @@
 		}
 	}
 
+	//static_content saver (Sidebar, Footer)
+	if (isset($_POST['content']) && isset($_POST['Tag']) && isset($_POST['lang']))
+	{
+		$content = mysqli_real_escape_string($conn,$_REQUEST["content"]);
+		$siteid = $_REQUEST["Tag"];
+		$lang = $_REQUEST["lang"];
+
+		$sql = "INSERT INTO static_content_" . $lang . " (Content, Tag) VALUES ('" . $content . "', '" . $siteid . "')  ON DUPLICATE KEY UPDATE Content=\"$content\"";
+		if (mysqli_query($conn, $sql)) {
+			echo "Content wurde gespeichert.";
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+	}
+
 	//Save Site Navigation
 	if (isset($_POST['IDArr']) && isset($_POST['NavIndexArr']))
 	{
