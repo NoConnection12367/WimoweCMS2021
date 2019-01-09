@@ -59,7 +59,7 @@ div.listItem:hover {
     line-height: 22px;
 }
 
-.subItemList {
+ol ol {
     padding-left: 25px;
 }
 

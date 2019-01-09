@@ -40,7 +40,7 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         array_push($sites, [$row["ID"], $row["Name"], $row["NavIndex"], $row["Visible"], $row["TemplateID"]]);
                         if(endsWith($row["NavIndex"],".1")) 
-                            echo "<ol class='subItemList'>"; 
+                            echo "<ol>"; 
                         elseif ($row["NavIndex"] != "1")
                             echo "</li>"; 
                         if (strpos($isend, ".") && !strpos($row["NavIndex"], "."))

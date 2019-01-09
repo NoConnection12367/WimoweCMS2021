@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 08. Jan 2019 um 18:19
--- Server-Version: 10.1.37-MariaDB
--- PHP-Version: 7.2.12
+-- Erstellungszeit: 09. Jan 2019 um 10:37
+-- Server-Version: 10.1.33-MariaDB
+-- PHP-Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -75,7 +75,7 @@ CREATE TABLE `layout` (
 --
 
 INSERT INTO `layout` (`ID`, `cssPath`, `WebsiteFontSize`, `SiteFontSize`, `TextFontSize`, `FontFamily`) VALUES
-(1, 'css/style.css', 32, 24, 16, 'sans-serif');
+(1, 'css/style_business.css', 32, 24, 16, 'sans-serif');
 
 -- --------------------------------------------------------
 
@@ -124,10 +124,10 @@ CREATE TABLE `site` (
 
 INSERT INTO `site` (`ID`, `Name`, `Visible`, `NavIndex`, `TemplateID`, `Creator`) VALUES
 (1, 'Home', 1, '1', 2, 'Moritz'),
-(2, 'Impressum', 1, '3', 1, 'Moritz'),
+(2, 'Impressum', 1, '1.1', 1, 'Moritz'),
 (3, 'Seite 1', 1, '2', 1, 'Moritz'),
-(4, 'Seite 1.1', 1, '2.1', 1, 'Moritz'),
-(5, 'Seite 1.2', 1, '2.2', 1, 'Moritz');
+(4, 'Seite 1.1', 1, '3', 1, 'Moritz'),
+(5, 'Seite 1.2', 1, '3.1', 1, 'Moritz');
 
 -- --------------------------------------------------------
 
@@ -271,8 +271,7 @@ ALTER TABLE `media`
 --
 ALTER TABLE `site`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Name` (`Name`),
-  ADD UNIQUE KEY `NavIndex` (`NavIndex`);
+  ADD UNIQUE KEY `Name` (`Name`);
 
 --
 -- Indizes für die Tabelle `static_content_de`
