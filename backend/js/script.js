@@ -75,3 +75,16 @@ function delFromMediathek(val){
         }
     });
 }
+
+function getPermissionLevel(callback) {
+
+    $.ajax({
+        url: 'postback/getPermissionLevel.php',
+        type: 'POST',
+
+        success: function(response)
+        { 
+            return callback(response);
+        },
+    });
+}
