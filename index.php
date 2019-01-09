@@ -1,3 +1,48 @@
+<?php
+    // Connect to sql database
+
+    // Define constants
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    else
+    {
+        mysqli_set_charset($conn,"utf8");
+        mysqli_select_db ($conn, "wimowe");
+    }
+
+    // Start session, set language to german by default
+    session_start();
+
+    if (!isset($_SESSION["selectedLanguage"])) {
+        $_SESSION["selectedLanguage"] = "Deutsch";
+    }
+
+    if ($_SESSION["selectedLanguage"] == "Deutsch") {
+        $static_content = "static_content_de";
+        $content = "content_de";
+    }
+    else {
+        $static_content = "static_content_en";
+        $content = "content_en";
+    }
+
+
+    $sql = "SELECT * FROM layout";
+    $result = mysqli_query($conn, $sql);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+?>
+
+
 <!DOCTYPE html>
 <html>
     <!-- Head of main page -->
@@ -9,52 +54,34 @@
 
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous"> -->
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $row["cssPath"] ?>" />
 
         
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/main.js"></script>
     </head>
 
+<?php
+    echo "
+    <style>
+        * {
+            font-family:" . $row["FontFamily"] . ";
+        }
+        p {
+            font-size:" . $row["TextFontSize"] . "px;
+        } 
+        h1 {
+            font-size:" . $row["WebsiteFontSize"] . "px;
+        }
+        h2 {
+            font-size:" . $row["SiteFontSize"] . "px;
+        }
+    </style>"
+?>
+
     <?php
-        // Connect to sql database
-
-        // Define constants
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        // Create connection
-        $conn = mysqli_connect($servername, $username, $password);
-
-        // Check connection
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        else
-        {
-            mysqli_set_charset($conn,"utf8");
-            mysqli_select_db ($conn, "wimowe");
-        }
-
-        // Start session, set language to german by default
-        session_start();
-
-        if (!isset($_SESSION["selectedLanguage"])) {
-            $_SESSION["selectedLanguage"] = "Deutsch";
-        }
-
-        if ($_SESSION["selectedLanguage"] == "Deutsch") {
-            $static_content = "static_content_de";
-            $content = "content_de";
-        }
-        else {
-            $static_content = "static_content_en";
-            $content = "content_en";
-        }
-
+    }
     ?>
-
 
     <!-- Body -->
     <body>
