@@ -88,3 +88,42 @@ function getPermissionLevel(callback) {
         },
     });
 }
+
+
+
+$( function() {
+    // run the currently selected effect
+    function runEffect() {
+
+      // Run the effect
+      $( "#safeResponse" ).show( "fold", 500, callback );
+    };
+ 
+    //callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#safeResponse:visible" ).removeAttr( "style" ).fadeOut();
+      }, 1000 );
+    };
+ 
+    // Set effect from select menu value
+    $( "#saveButton" ).on( "click", function() {
+      runEffect();
+    });
+    
+    $( "#savebutton" ).on( "click", function() {
+        runEffect();
+    });
+    
+    $( "#save" ).on( "click", function() {
+        runEffect();
+    });
+    
+    $( "#savebutton" ).on( "click", function() {
+        runEffect();
+    });
+
+
+ 
+    $( "#safeResponse" ).hide();
+  } );

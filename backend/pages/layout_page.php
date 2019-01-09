@@ -76,3 +76,9 @@
     <button id="saveButton" class="buttonStyle">Speichern</button>
 
 </div>
+
+<div id="safeResponse" class="ui-widget-content ui-corner-all">
+    <p>
+        <i style="color: green; margin-right: 20px;" class="fas fa-check-circle"></i> Speichern erfolgreich. 
+    </p>
+</div>
