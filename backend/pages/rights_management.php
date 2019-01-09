@@ -1,4 +1,13 @@
 
+<?php
+    // Check if user is allowed to view this page
+    if (permissionLevel() < 25) {
+        include("permission_denied.php");
+        return;
+    }
+?>
+
+
 <div class="rightManagementContainer">
 
     <script src="js\rights_management_script.js" type="text/javascript"></script>

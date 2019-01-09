@@ -1,4 +1,12 @@
 
+<?php
+    // Check if user is allowed to view this page
+    if (permissionLevel() < 15) {
+        include("permission_denied.php");
+        return;
+    }
+?>
+
 <head>
     <link rel="stylesheet" type="text/css" href="css/layout_page.css">
     <script src="js/layout_page_script.js"></script>

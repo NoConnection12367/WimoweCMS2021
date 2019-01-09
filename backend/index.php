@@ -41,7 +41,7 @@
 
             <?php
                 // TODO: Remove to activate permission system!
-                $_SESSION["activeUser"] = "Admin";
+                // $_SESSION["activeUser"] = "Admin";
 
                 // Check if a user is logged in already
                 if (isset($_SESSION["activeUser"]))
