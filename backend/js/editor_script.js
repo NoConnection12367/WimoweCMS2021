@@ -56,7 +56,6 @@ $(document).ready(function () {
             },
             function (status) {
                 //alert("Status: " + status);
-                alert("Änderungen wurden gespeichert.");
                 url = "http://localhost/WimoweCMS2021/backend/index.php?page=sites_overview"
                 window.location = url;
             });
@@ -72,7 +71,6 @@ $(document).ready(function () {
             },
             function (status) {
                 //alert("Status: " + status);
-                alert("Änderungen wurden gespeichert.");
                 url = "http://localhost/WimoweCMS2021/backend/index.php?page=sites_overview"
                 window.location = url;
             });

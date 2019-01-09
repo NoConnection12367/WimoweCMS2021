@@ -35,7 +35,6 @@ $(document).ready(function(){
           },
           function (status) {
               //alert("Status: " + status);
-              alert("Änderungen wurden gespeichert.");
           });
       });   
 
@@ -59,7 +58,6 @@ $(document).ready(function(){
         },
         function (status) {
             //alert("Status: " + status);
-            alert("Änderungen wurden gespeichert.");
             location.reload();
         });
         $("#dialog_new").dialog('close');
@@ -106,7 +104,6 @@ $(document).ready(function(){
         },
         function (status) {
             //alert("Status: " + status);
-            alert("Änderungen wurden gespeichert.");
             location.reload();
         });
         $("#dialog_edit").dialog('close');
@@ -121,7 +118,6 @@ $(document).ready(function(){
         },
         function (status) {
             //alert("Status: " + status);
-            alert("Änderungen wurden gespeichert.");
             location.reload();
         });
         $("#dialog_edit").dialog('close');

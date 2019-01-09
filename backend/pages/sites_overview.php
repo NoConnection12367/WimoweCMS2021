@@ -16,9 +16,9 @@
     </head>
     
     <body>
+        <div class="rightManagementContainer" style="max-width:500px">
         <h1>Seiten verwalten</h1>
         <!-- Seitenauswahl -->
-        <div style="max-width:500px">
         <div id="siteList">
             <ol class="sortable">
                 <?php
