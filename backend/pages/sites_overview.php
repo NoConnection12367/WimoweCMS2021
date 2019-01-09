@@ -111,7 +111,7 @@
             <input class="isvisible" type="checkbox" />
             <br>
             <button class="buttonStyle editsitesaver">Speichern</button>
-            <button class="buttonStyle editsitedelete">Abbrechen</button>
+            <button class="buttonStyle editsitedelete">Löschen</button>
             <p class="siteid" hidden></p>
         </div>
     </body>
