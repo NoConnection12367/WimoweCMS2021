@@ -114,16 +114,6 @@ $( function() {
     $( "#savebutton" ).on( "click", function() {
         runEffect();
     });
-    
-    $( "#save" ).on( "click", function() {
-        runEffect();
-    });
-    
-    $( "#savebutton" ).on( "click", function() {
-        runEffect();
-    });
-
-
- 
+        
     $( "#safeResponse" ).hide();
   } );
