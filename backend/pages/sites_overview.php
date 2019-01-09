@@ -18,6 +18,7 @@
     <body>
         <h1>Seiten verwalten</h1>
         <!-- Seitenauswahl -->
+        <div style="max-width:500px">
         <div id="siteList">
             <ol class="sortable">
                 <?php
@@ -56,11 +57,11 @@
             </ol>
         </div>
 
-        <button id="savebutton" class="buttonStyle">Speichern</button>
         <button id="createbutton" class="buttonStyle">Neue Seite hinzufügen</button>
         <button id="sidebarbutton" class="buttonStyle">Sidebar editieren</button>
         <button id="footerbutton" class="buttonStyle">Footer editieren</button>
-
+        <button style="float:right" id="savebutton" class="buttonStyle">Speichern</button>
+        </div>
         <div hidden id="dialog_new" title="Neue Seite hinzufügen">
             Seitenname:
             <input class="inputStyle sitename_new" type="text" />
