@@ -43,7 +43,7 @@
             ?>
         </textarea>
 
-        <button id="savebutton_static" class="buttonStyle" type="button">Save!</button>
+        <button id="savebutton_static" class="buttonStyle" type="button">Speichern</button>
         <button id="abbrechenbutton" class="buttonStyle" type="button">Abbrechen</button>
     </body>
 </html>
