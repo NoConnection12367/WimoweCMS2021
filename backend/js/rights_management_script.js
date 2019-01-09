@@ -6,8 +6,13 @@ $(document).ready(function () {
         $("#newUserModal").css("display", "block");
     });
 
+    $("#saveUserButton").click(function () {
+        saveUser($(this).attr("userID"));
+    });
+
     $(".close").click(function () {
         $("#newUserModal").css("display", "none");
+        $("#editUserModal").css("display", "none");
     });
 
     $("#createUserButton").click(function () {
@@ -17,6 +22,10 @@ $(document).ready(function () {
 
     $(".user-delBtn").click(function () {
         deleteUser($(this).attr("value"));
+    });
+
+    $(".user-editBtn").click(function () {
+        openEditDialog($(this).attr("username"), $(this).attr("rightID"), $(this).attr("userID"));
     });
 
 });
@@ -86,6 +95,37 @@ function deleteUser(username) {
             if (result == "Success")
             {
                 // User deleted successfully, reload page to display refreshed userlist
+                location.reload();
+            }
+        }
+    });
+}
+
+function openEditDialog(username, groupID, userID) {
+
+    $("#editUserModal #username").val(username);
+    $("#editUserModal #password").val("HalloDomi");
+    $("#editUserModal #rightGroup").val(groupID);
+    $("#editUserModal #saveUserButton").attr("userID", userID);
+
+    $("#editUserModal").css("display", "block");
+}
+
+function saveUser(userID) {
+
+    $.ajax({
+        url: "postback/edit_user_postback.php", 
+        type: "POST",
+        data: {
+            userID: userID,
+            username: $("#editUserModal #username").val(),
+            password: $("#editUserModal #password").val(),
+            rightID: $("#editUserModal #rightGroup").val()
+        },
+        success: function(result){
+            if (result == "Success")
+            {
+                // User updated successfully, reload page to display refreshed userlist
                 location.reload();
             }
         }

@@ -15,7 +15,10 @@
 
 .userTable th,td {
     padding: 5px;
-    padding-left: 10px;
+}
+
+.icontd {
+    width: 20px;
 }
 
 .userTable .th {
@@ -23,7 +26,7 @@
 }
 
 /* Delete button styling */
-.user-delBtn{
+.iconButton {
     width: 28px;
     height: 28px;
     text-align: center;
@@ -34,7 +37,7 @@
     float: right;
 }
 
-.user-delBtn:hover{
+.iconButton:hover{
     font-size: 22px;
     color: red;
 }
@@ -78,22 +81,22 @@
 }
 
 /* Modal Content styling */
-#newUserModal input, select {
+.modal input, select {
     width: calc(100% - 20px);
     padding: 5px;
     border-style: ridge;
     border-radius: 5px;
 }
 
-#newUserModal input:focus, select:focus {
+.modal input:focus, select:focus {
     outline: 0;
 }
 
-#newUserModal p,button {
+.modal p,button {
     margin-top: 10px;
 }
 
-#newUserModal #errorText {
+.modal #errorText {
     color: red;
     display: none;
 }
