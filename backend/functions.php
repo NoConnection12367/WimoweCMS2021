@@ -101,7 +101,7 @@
 		$row = mysqli_fetch_assoc($result);
 		$Navindex = (int)$row ["NavIndex"];
 		$Navindex++;
-		$sql = sprintf("INSERT INTO `site`(`Name`, `NavIndex`, `TemplateID`, `Visible`, `Creator`) VALUES ('%s','%d','%s', %d,'Peter')",$name, $Navindex, $template, $isvisible);
+		$sql = sprintf("INSERT INTO `site`(`Name`, `NavIndex`, `TemplateID`, `Visible`, `Creator`) VALUES ('%s','%d','%s', %d,'%s')",$name, $Navindex, $template, $isvisible, $_SESSION["activeUser"]);
 		if (mysqli_query($conn, $sql)) {
 			echo "Content wurde gespeichert.";
 		} else {
