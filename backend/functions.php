@@ -23,7 +23,7 @@
 		
 		$path = "media/" . $_FILES['file']['name'];
 		$titel = $_FILES['file']['name'];
-		$autor = "Domi"; //später session-inhaber
+		$autor = $_SESSION["activeUser"]; //später session-inhaber
 		$datum = date("Y-m-d", time());
 		$format = $_FILES['file']['type'];
 
